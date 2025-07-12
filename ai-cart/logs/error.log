@@ -1,0 +1,376 @@
+2025-07-10 21:11:45 [[31merror[39m]: Error: Product not found
+    at Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:12:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 21:12:50 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:18:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 21:20:18 [[31merror[39m]: CastError: Cast to string failed for value "{
+  id: 'p00003',
+  category: 'Vegetables',
+  ingredients: [ 'Bell Pepper' ]
+}" (type Object) at path "id" for model "Product"
+    at SchemaString.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:607:11)
+    at SchemaType.applySetters (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1258:12)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:691:17)
+    at C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1637:18
+    at Array.map (<anonymous>)
+    at SchemaString.handle$in (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1633:14)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:683:20)
+    at cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\cast.js:367:39)
+    at Query.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:5055:12)
+    at Query._castConditions (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:2351:10)
+2025-07-10 21:22:05 [[31merror[39m]: SyntaxError: Unexpected token : in JSON at position 34
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\body-parser\lib\types\json.js:77:19)
+    at C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\body-parser\lib\read.js:123:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+2025-07-10 21:30:03 [[31merror[39m]: CastError: Cast to string failed for value "{
+  id: 'p00003',
+  category: 'Vegetables',
+  ingredients: [ 'Bell Pepper' ]
+}" (type Object) at path "id" for model "Product"
+    at SchemaString.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:607:11)
+    at SchemaType.applySetters (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1258:12)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:691:17)
+    at C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1637:18
+    at Array.map (<anonymous>)
+    at SchemaString.handle$in (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1633:14)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:683:20)
+    at cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\cast.js:367:39)
+    at Query.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:5055:12)
+    at Query._castConditions (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:2351:10)
+2025-07-10 21:56:41 [[31merror[39m]: CastError: Cast to string failed for value "{
+  id: 'p00003',
+  category: 'Vegetables',
+  ingredients: [ 'Bell Pepper' ]
+}" (type Object) at path "id" for model "Product"
+    at SchemaString.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:607:11)
+    at SchemaType.applySetters (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1258:12)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:691:17)
+    at C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1637:18
+    at Array.map (<anonymous>)
+    at SchemaString.handle$in (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1633:14)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:683:20)
+    at cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\cast.js:367:39)
+    at Query.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:5055:12)
+    at Query._castConditions (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:2351:10)
+2025-07-10 22:04:53 [[31merror[39m]: CastError: Cast to string failed for value "{
+  id: 'p00003',
+  category: 'Vegetables',
+  ingredients: [ 'Bell Pepper' ]
+}" (type Object) at path "id" for model "Product"
+    at SchemaString.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:607:11)
+    at SchemaType.applySetters (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1258:12)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:691:17)
+    at C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1637:18
+    at Array.map (<anonymous>)
+    at SchemaString.handle$in (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1633:14)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:683:20)
+    at cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\cast.js:367:39)
+    at Query.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:5055:12)
+    at Query._castConditions (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:2351:10)
+2025-07-10 22:14:54 [[31merror[39m]: ReferenceError: User is not defined
+    at Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:55:18)
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:14:54 [[31merror[39m]: ReferenceError: Product is not defined
+    at Object.filterProductsByBudget (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\budgetService.js:31:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:167:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:14:54 [[31merror[39m]: TypeError: recommendationService.getCartBasedRecommendations is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:56)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:15:34 [[31merror[39m]: ReferenceError: User is not defined
+    at Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:55:18)
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:15:34 [[31merror[39m]: ReferenceError: Product is not defined
+    at Object.filterProductsByBudget (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\budgetService.js:31:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:167:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:15:34 [[31merror[39m]: TypeError: recommendationService.getCartBasedRecommendations is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:56)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:29:10 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:29:10 [[31merror[39m]: TypeError: recommendationService.getCartBasedRecommendations is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:56)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:35:30 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"30s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:35:31 [[31merror[39m]: ReferenceError: getHarmfulIngredients is not defined
+    at executeFilterPipeline (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:254:30)
+    at Object.getCategorySpecificRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:161:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:35:31 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:42:35 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"25s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:42:36 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"24s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async executeFilterPipeline (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:545:30)
+    at async Object.getCategorySpecificRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:485:30)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:42:36 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:51:03 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"58s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:51:04 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"56s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async executeFilterPipeline (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:545:30)
+    at async Object.getCategorySpecificRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:485:30)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:51:04 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:54:07 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"54s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:54:08 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"52s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async executeFilterPipeline (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:545:30)
+    at async Object.getCategorySpecificRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:485:30)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:54:08 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 23:04:10 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"50s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:04:39 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"21s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:05:11 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"49s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:05:22 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"39s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:05:39 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"22s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:27:13 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"48s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:34:35 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:36:50 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"11s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 08:30:05 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"55s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 08:35:52 [[31merror[39m]: SyntaxError: Unexpected token ` in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:33:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 08:35:54 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 11:37:24 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:39:03 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:41:35 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:43:17 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:43:40 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:48:40 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:51:12 [[31merror[39m]: SyntaxError: Unexpected token '`', "```json
+[
+"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at Object.getHarmfulIngredients (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\healthFilterService.js:33:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:56:21 [[31merror[39m]: TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+    at Object.getCategorySpecificRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\recommendationService.js:36:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getCartRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:176:28)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 11:56:21 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 12:01:54 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 12:07:37 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:13:09 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:16:36 [[31merror[39m]: Error: Invalid JSON from LLM
+    at getLLMRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\recommendationService.js:450:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getCategorySpecificRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\recommendationService.js:384:28)
+    at async Object.getCartRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:204:26)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 12:16:37 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:25:02 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:30:43 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:39:47 [[31merror[39m]: LLM processing failed:
+2025-07-11 12:39:47 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:56:07 [[31merror[39m]: SyntaxError: Unexpected token '`', "```json
+[
+"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at getHarmfulIngredients (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\healthFilterService.js:33:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.filterProductsByHealth (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:74:28)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 12:57:02 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 13:03:00 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 13:14:36 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 13:18:21 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 13:39:02 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:16:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 13:41:25 [[31merror[39m]: SyntaxError: Unexpected token '`', "```json
+[
+"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at Object.getHarmfulIngredients (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\healthFilterService.js:33:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:18:32)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 20:56:03 [[31merror[39m]: Product validation error: Operation `products.findOne()` buffering timed out after 10000ms
+2025-07-11 20:56:03 [[31merror[39m]: Error in addToCart:

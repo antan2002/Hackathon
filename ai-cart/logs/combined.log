@@ -1,0 +1,722 @@
+2025-07-10 14:26:43 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 14:29:14 [[32minfo[39m]: Server running on port 5000
+2025-07-10 14:29:15 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 14:29:25 [[32minfo[39m]: Server running on port 5000
+2025-07-10 14:29:26 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 14:29:31 [[32minfo[39m]: Server running on port 5000
+2025-07-10 14:29:31 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 14:33:57 [[32minfo[39m]: Server running on port 5000
+2025-07-10 14:33:58 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 14:35:14 [[32minfo[39m]: Server running on port 5000
+2025-07-10 14:35:15 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 14:42:50 [[32minfo[39m]: Server running on port 5000
+2025-07-10 14:42:50 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 14:43:46 [[32minfo[39m]: Server running on port 5000
+2025-07-10 14:43:46 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 15:11:36 [[32minfo[39m]: Server running on port 5000
+2025-07-10 15:11:36 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 15:14:04 [[32minfo[39m]: Server running on port 5000
+2025-07-10 15:14:05 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 15:41:43 [[32minfo[39m]: Server running on port 5000
+2025-07-10 15:41:43 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 15:43:37 [[32minfo[39m]: Server running on port 5000
+2025-07-10 15:43:38 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 15:50:55 [[32minfo[39m]: Server running on port 5000
+2025-07-10 15:50:55 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 15:55:03 [[32minfo[39m]: Server running on port 5000
+2025-07-10 15:55:04 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 15:55:13 [[32minfo[39m]: Server running on port 5000
+2025-07-10 15:55:14 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 16:09:01 [[32minfo[39m]: Server running on port 5000
+2025-07-10 16:09:02 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 16:11:36 [[32minfo[39m]: Server running on port 5000
+2025-07-10 16:11:37 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 16:29:38 [[32minfo[39m]: Server running on port 5000
+2025-07-10 16:29:39 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 16:29:42 [[32minfo[39m]: Server running on port 5000
+2025-07-10 16:29:43 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 16:29:44 [[32minfo[39m]: Server running on port 5000
+2025-07-10 16:29:45 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 16:29:46 [[32minfo[39m]: Server running on port 5000
+2025-07-10 16:29:47 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 19:41:28 [[32minfo[39m]: Server running on port 5000
+2025-07-10 19:41:32 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 21:07:05 [[33mwarn[39m]: Authentication failed: No token provided
+2025-07-10 21:11:40 [[32minfo[39m]: Server running on port 5000
+2025-07-10 21:11:42 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 21:11:45 [[33mwarn[39m]: Invalid product ID format: p101
+2025-07-10 21:11:45 [[31merror[39m]: Error: Product not found
+    at Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:12:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 21:12:50 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:18:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 21:14:52 [[33mwarn[39m]: Authentication failed: No token provided
+2025-07-10 21:18:24 [[32minfo[39m]: Server running on port 5000
+2025-07-10 21:18:25 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 21:18:29 [[33mwarn[39m]: Authentication failed: No token provided
+2025-07-10 21:18:41 [[33mwarn[39m]: Authentication failed: No token provided
+2025-07-10 21:20:13 [[32minfo[39m]: Server running on port 5000
+2025-07-10 21:20:14 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 21:20:18 [[31merror[39m]: CastError: Cast to string failed for value "{
+  id: 'p00003',
+  category: 'Vegetables',
+  ingredients: [ 'Bell Pepper' ]
+}" (type Object) at path "id" for model "Product"
+    at SchemaString.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:607:11)
+    at SchemaType.applySetters (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1258:12)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:691:17)
+    at C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1637:18
+    at Array.map (<anonymous>)
+    at SchemaString.handle$in (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1633:14)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:683:20)
+    at cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\cast.js:367:39)
+    at Query.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:5055:12)
+    at Query._castConditions (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:2351:10)
+2025-07-10 21:22:05 [[31merror[39m]: SyntaxError: Unexpected token : in JSON at position 34
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\body-parser\lib\types\json.js:77:19)
+    at C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\body-parser\lib\read.js:123:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+2025-07-10 21:30:03 [[31merror[39m]: CastError: Cast to string failed for value "{
+  id: 'p00003',
+  category: 'Vegetables',
+  ingredients: [ 'Bell Pepper' ]
+}" (type Object) at path "id" for model "Product"
+    at SchemaString.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:607:11)
+    at SchemaType.applySetters (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1258:12)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:691:17)
+    at C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1637:18
+    at Array.map (<anonymous>)
+    at SchemaString.handle$in (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1633:14)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:683:20)
+    at cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\cast.js:367:39)
+    at Query.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:5055:12)
+    at Query._castConditions (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:2351:10)
+2025-07-10 21:49:16 [[32minfo[39m]: Server running on port 5000
+2025-07-10 21:49:17 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 21:56:41 [[31merror[39m]: CastError: Cast to string failed for value "{
+  id: 'p00003',
+  category: 'Vegetables',
+  ingredients: [ 'Bell Pepper' ]
+}" (type Object) at path "id" for model "Product"
+    at SchemaString.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:607:11)
+    at SchemaType.applySetters (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1258:12)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:691:17)
+    at C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1637:18
+    at Array.map (<anonymous>)
+    at SchemaString.handle$in (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1633:14)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:683:20)
+    at cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\cast.js:367:39)
+    at Query.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:5055:12)
+    at Query._castConditions (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:2351:10)
+2025-07-10 22:04:45 [[32minfo[39m]: Server running on port 5000
+2025-07-10 22:04:48 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 22:04:53 [[31merror[39m]: CastError: Cast to string failed for value "{
+  id: 'p00003',
+  category: 'Vegetables',
+  ingredients: [ 'Bell Pepper' ]
+}" (type Object) at path "id" for model "Product"
+    at SchemaString.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:607:11)
+    at SchemaType.applySetters (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1258:12)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:691:17)
+    at C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1637:18
+    at Array.map (<anonymous>)
+    at SchemaString.handle$in (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schemaType.js:1633:14)
+    at SchemaString.castForQuery (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\schema\string.js:683:20)
+    at cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\cast.js:367:39)
+    at Query.cast (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:5055:12)
+    at Query._castConditions (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\mongoose\lib\query.js:2351:10)
+2025-07-10 22:12:26 [[32minfo[39m]: Server running on port 5000
+2025-07-10 22:12:28 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 22:14:54 [[31merror[39m]: ReferenceError: User is not defined
+    at Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:55:18)
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:14:54 [[31merror[39m]: ReferenceError: Product is not defined
+    at Object.filterProductsByBudget (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\budgetService.js:31:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:167:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:14:54 [[31merror[39m]: TypeError: recommendationService.getCartBasedRecommendations is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:56)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:15:23 [[32minfo[39m]: Server running on port 5000
+2025-07-10 22:15:24 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 22:15:34 [[31merror[39m]: ReferenceError: User is not defined
+    at Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:55:18)
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:15:34 [[31merror[39m]: ReferenceError: Product is not defined
+    at Object.filterProductsByBudget (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\budgetService.js:31:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:167:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:15:34 [[31merror[39m]: TypeError: recommendationService.getCartBasedRecommendations is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:56)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:29:01 [[32minfo[39m]: Server running on port 5000
+2025-07-10 22:29:03 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 22:29:10 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:29:10 [[31merror[39m]: TypeError: recommendationService.getCartBasedRecommendations is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:56)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:35:19 [[32minfo[39m]: Server running on port 5000
+2025-07-10 22:35:20 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 22:35:30 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"30s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:35:31 [[31merror[39m]: ReferenceError: getHarmfulIngredients is not defined
+    at executeFilterPipeline (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:254:30)
+    at Object.getCategorySpecificRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:161:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:35:31 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:42:24 [[32minfo[39m]: Server running on port 5000
+2025-07-10 22:42:26 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 22:42:35 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"25s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:42:36 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"24s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async executeFilterPipeline (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:545:30)
+    at async Object.getCategorySpecificRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:485:30)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:42:36 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:50:53 [[32minfo[39m]: Server running on port 5000
+2025-07-10 22:50:54 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 22:51:03 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"58s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:51:04 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"56s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async executeFilterPipeline (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:545:30)
+    at async Object.getCategorySpecificRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:485:30)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:51:04 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:53:58 [[32minfo[39m]: Server running on port 5000
+2025-07-10 22:54:00 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 22:54:07 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"54s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:54:08 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"52s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async executeFilterPipeline (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:545:30)
+    at async Object.getCategorySpecificRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\recommendationService.js:485:30)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:176:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 22:54:08 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-10 23:04:10 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"50s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:04:39 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"21s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:05:05 [[32minfo[39m]: Server running on port 5000
+2025-07-10 23:05:06 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 23:05:11 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"49s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:05:22 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"39s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:05:29 [[32minfo[39m]: Server running on port 5000
+2025-07-10 23:05:30 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 23:05:39 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"22s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:27:05 [[32minfo[39m]: Server running on port 5000
+2025-07-10 23:27:07 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 23:27:13 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-1.5-pro","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"48s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:34:35 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-10 23:36:40 [[32minfo[39m]: Server running on port 5000
+2025-07-10 23:36:42 [[32minfo[39m]: MongoDB connected successfully
+2025-07-10 23:36:50 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"11s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 08:28:36 [[32minfo[39m]: Server running on port 5000
+2025-07-11 08:28:39 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 08:30:05 [[31merror[39m]: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-1.5-pro"}}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"55s"}]
+    at handleResponseNotOk (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:434:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:403:9)
+    at async generateContent (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\node_modules\@google\generative-ai\dist\index.js:867:22)
+    at async Object.getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:27:20)
+    at async Object.addToCart (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 08:34:36 [[32minfo[39m]: Server running on port 5000
+2025-07-11 08:34:38 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 08:35:52 [[31merror[39m]: SyntaxError: Unexpected token ` in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at getHarmfulIngredients (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:33:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.filterProductsByHealth (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:161:28)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 08:35:54 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\antan\Documents\My-project\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async C:\Users\antan\Documents\My-project\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 09:11:34 [[32minfo[39m]: Server running on port 5000
+2025-07-11 09:11:36 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:03:31 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:03:32 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:09:14 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:09:14 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:09:22 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:09:23 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:20:47 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:20:47 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:20:51 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:20:52 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:23:09 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:23:10 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:27:57 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:27:57 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:32:56 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:32:56 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:32:59 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:33:00 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:37:24 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:39:03 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:41:31 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:41:32 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:41:35 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:42:55 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:42:55 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:43:17 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:43:40 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:48:32 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:48:32 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:48:40 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:110:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:50:59 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:51:00 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:51:12 [[31merror[39m]: SyntaxError: Unexpected token '`', "```json
+[
+"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at Object.getHarmfulIngredients (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\healthFilterService.js:33:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:112:32)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 11:51:32 [[32minfo[39m]: Server running on port 5000
+2025-07-11 11:51:33 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 11:56:21 [[31merror[39m]: TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+    at Object.getCategorySpecificRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\recommendationService.js:36:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getCartRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:176:28)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 11:56:21 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 12:01:48 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:01:49 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:01:54 [[31merror[39m]: TypeError: recommendedIds.slice is not a function
+    at Object.getCartRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:183:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 12:03:33 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:03:34 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:06:51 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:06:52 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:07:07 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:07:07 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:07:37 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:08:50 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:08:50 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:12:15 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:12:16 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:12:57 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:12:57 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:13:09 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:15:41 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:15:42 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:15:56 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:15:57 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:16:36 [[31merror[39m]: Error: Invalid JSON from LLM
+    at getLLMRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\recommendationService.js:450:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.getCategorySpecificRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\recommendationService.js:384:28)
+    at async Object.getCartRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:204:26)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 12:16:37 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:17:08 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:17:09 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:24:00 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:24:01 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:25:02 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:29:57 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:29:57 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:30:43 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:37:35 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:37:35 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:39:47 [[31merror[39m]: LLM processing failed:
+2025-07-11 12:39:47 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 12:55:54 [[32minfo[39m]: Server running on port 5000
+2025-07-11 12:55:55 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 12:56:07 [[31merror[39m]: SyntaxError: Unexpected token '`', "```json
+[
+"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at getHarmfulIngredients (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\healthFilterService.js:33:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.filterProductsByHealth (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\healthFilterService.js:59:32)
+    at async Object.getCartRecommendations (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:74:28)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:130:29
+2025-07-11 12:57:02 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 13:01:04 [[32minfo[39m]: Server running on port 5000
+2025-07-11 13:01:05 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 13:03:00 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 13:13:14 [[32minfo[39m]: Server running on port 5000
+2025-07-11 13:13:15 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 13:13:23 [[32minfo[39m]: Server running on port 5000
+2025-07-11 13:13:23 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 13:14:36 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 13:17:11 [[32minfo[39m]: Server running on port 5000
+2025-07-11 13:17:12 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 13:17:18 [[32minfo[39m]: Server running on port 5000
+2025-07-11 13:17:19 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 13:18:21 [[31merror[39m]: recommendedIds is not an array:
+2025-07-11 13:30:17 [[32minfo[39m]: Server running on port 5000
+2025-07-11 13:30:18 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 13:37:26 [[32minfo[39m]: Server running on port 5000
+2025-07-11 13:37:27 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 13:39:02 [[31merror[39m]: Error: User not found
+    at Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:16:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 13:41:13 [[32minfo[39m]: Server running on port 5000
+2025-07-11 13:41:13 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 13:41:25 [[31merror[39m]: SyntaxError: Unexpected token '`', "```json
+[
+"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at Object.getHarmfulIngredients (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\services\healthFilterService.js:33:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.addToCart (C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\controllers\cartController.js:18:32)
+    at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
+2025-07-11 13:45:09 [[32minfo[39m]: Server running on port 5000
+2025-07-11 13:45:10 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 14:18:37 [[32minfo[39m]: Server running on port 5000
+2025-07-11 14:18:39 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 14:21:33 [[32minfo[39m]: Server running on port 5000
+2025-07-11 14:21:34 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 14:30:34 [[32minfo[39m]: Server running on port 5000
+2025-07-11 14:30:34 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 14:30:46 [[32minfo[39m]: Server running on port 5000
+2025-07-11 14:30:46 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 14:41:48 [[32minfo[39m]: Server running on port 5000
+2025-07-11 14:41:49 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 14:45:02 [[32minfo[39m]: Server running on port 5000
+2025-07-11 14:45:02 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 14:46:26 [[32minfo[39m]: Server running on port 5000
+2025-07-11 14:46:26 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 14:48:55 [[32minfo[39m]: Server running on port 5000
+2025-07-11 14:48:56 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 14:49:16 [[32minfo[39m]: Server running on port 5000
+2025-07-11 14:49:16 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 14:56:42 [[32minfo[39m]: Server running on port 5000
+2025-07-11 14:56:42 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 14:56:56 [[32minfo[39m]: Server running on port 5000
+2025-07-11 14:56:57 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:01:29 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:01:29 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:06:23 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:06:24 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:08:03 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:08:03 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:08:27 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:08:27 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:09:29 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:09:29 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:10:03 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:10:04 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:10:33 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:10:34 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:11:11 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:11:12 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:11:59 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:12:00 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:12:12 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:12:12 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:20:03 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:20:03 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:21:38 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:21:38 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:21:48 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:21:49 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 15:49:13 [[32minfo[39m]: Server running on port 5000
+2025-07-11 15:49:13 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 20:55:47 [[32minfo[39m]: Server running on port 5000
+2025-07-11 20:56:03 [[31merror[39m]: Product validation error: Operation `products.findOne()` buffering timed out after 10000ms
+2025-07-11 20:56:03 [[31merror[39m]: Error in addToCart:
+2025-07-11 20:56:04 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 22:16:26 [[32minfo[39m]: Server running on port 5000
+2025-07-11 22:16:27 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 22:37:57 [[32minfo[39m]: Server running on port 5000
+2025-07-11 22:38:01 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 22:38:58 [[32minfo[39m]: Server running on port 5000
+2025-07-11 22:39:00 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 22:46:35 [[32minfo[39m]: Server running on port 5000
+2025-07-11 22:46:36 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 23:01:25 [[32minfo[39m]: Server running on port 5000
+2025-07-11 23:01:27 [[32minfo[39m]: MongoDB connected successfully
+2025-07-11 23:14:42 [[32minfo[39m]: Server running on port 5000
+2025-07-11 23:14:44 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 11:25:29 [[32minfo[39m]: Server running on port 5000
+2025-07-12 11:25:31 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 12:37:54 [[33mwarn[39m]: Invalid product ID format: search
+2025-07-12 12:37:54 [[33mwarn[39m]: Invalid product ID format: search
+2025-07-12 12:37:57 [[33mwarn[39m]: Invalid product ID format: search
+2025-07-12 12:37:58 [[33mwarn[39m]: Invalid product ID format: search
+2025-07-12 12:37:58 [[33mwarn[39m]: Invalid product ID format: search
+2025-07-12 12:38:06 [[33mwarn[39m]: Invalid product ID format: search
+2025-07-12 12:38:06 [[33mwarn[39m]: Invalid product ID format: search
+2025-07-12 12:40:31 [[32minfo[39m]: Server running on port 5000
+2025-07-12 12:40:33 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 12:43:51 [[32minfo[39m]: Server running on port 5000
+2025-07-12 12:43:53 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 12:43:55 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:43:56 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:44:02 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:44:10 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:45:01 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:47:57 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:47:57 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:48:02 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:48:02 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:49:07 [[32minfo[39m]: Server running on port 5000
+2025-07-12 12:49:09 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 12:49:12 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:49:21 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:49:21 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:49:25 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:49:25 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:49:34 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:49:34 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:49:38 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:49:38 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:51:02 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:51:03 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:51:12 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:51:12 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:52:16 [[32minfo[39m]: Server running on port 5000
+2025-07-12 12:52:18 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 12:52:21 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:58:13 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:58:13 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 12:58:41 [[33mwarn[39m]: Invalid product ID format: undefined
+2025-07-12 13:01:39 [[32minfo[39m]: Server running on port 5000
+2025-07-12 13:01:41 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 13:10:58 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:10:58 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:12:29 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:12:29 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:13:34 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:13:34 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:13:40 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:13:40 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:13:47 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:13:47 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:13:54 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:13:54 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:16:18 [[32minfo[39m]: Server running on port 5000
+2025-07-12 13:16:20 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 13:16:25 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:16:25 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:16:29 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:16:29 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:17:50 [[32minfo[39m]: Server running on port 5000
+2025-07-12 13:17:51 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 13:19:15 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:19:15 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:20:30 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:20:31 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:20:43 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:20:44 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:20:53 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:20:53 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:22:02 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:22:02 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:22:16 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:22:17 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:34:04 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:34:04 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:35:30 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:35:30 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:37:04 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:37:04 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:38:07 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:38:07 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:41:56 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:41:56 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:43:17 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:43:17 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:48:33 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:48:33 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:48:47 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 13:48:47 [[33mwarn[39m]: Invalid product ID format: NaN
+2025-07-12 14:06:59 [[32minfo[39m]: Server running on port 5000
+2025-07-12 14:07:00 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 14:47:25 [[32minfo[39m]: Server running on port 5000
+2025-07-12 14:47:27 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 15:06:47 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 15:07:00 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 15:07:29 [[32minfo[39m]: Server running on port 5000
+2025-07-12 15:07:33 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 15:14:33 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 15:14:33 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 15:14:41 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 15:14:41 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 15:14:53 [[32minfo[39m]: Server running on port 5000
+2025-07-12 15:14:55 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 15:30:11 [[33mwarn[39m]: Authentication failed: No token provided
+2025-07-12 15:31:27 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 15:31:27 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 15:33:35 [[32minfo[39m]: Server running on port 5000
+2025-07-12 15:33:37 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 15:40:56 [[32minfo[39m]: Server running on port 5000
+2025-07-12 15:40:58 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 16:24:46 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 16:24:47 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 16:37:44 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 16:37:44 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 16:37:58 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 16:37:58 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 20:09:42 [[32minfo[39m]: Server running on port 5000
+2025-07-12 20:09:51 [[32minfo[39m]: MongoDB connected successfully
