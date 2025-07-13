@@ -1,77 +1,88 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const cartController = require('../controllers/cartController');
-const { validateProductId } = require('../utils/helpers');
-const authMiddleware = require('../middlewares/authMiddleware');
-router.post('/add', async (req, res) => {
+const cartController = require("../controllers/cartController");
+const { validateProductId } = require("../utils/helpers");
+const authMiddleware = require("../middlewares/authMiddleware");
+router.post("/add", async (req, res) => {
   try {
     const { productId } = req.body;
 
     // TEMP: Hardcoded User ID for testing (Anita Sharma)
-    req.user = { id: '6873b2c293e7ada8c58dac89' };
+    req.user = { id: "6873b2c293e7ada8c58dac89" };
 
     if (!validateProductId(productId)) {
-      return res.status(400).json({ error: 'Invalid product ID format' });
+      return res.status(400).json({ error: "Invalid product ID format" });
     }
 
     const result = await cartController.addToCart(req.user.id, productId);
-    console.log('Add to cart result:', result);
+    console.log("Add to cart result:", result);
     if (!result.success) {
       return res.status(400).json({
         error: result.message,
-        harmfulIngredients: result.harmfulIngredients
+        harmfulIngredients: result.harmfulIngredients,
       });
     }
 
     res.json({
       success: true,
       product: result.product,
-      message: 'Item added to cart successfully'
+      message: "Item added to cart successfully",
     });
   } catch (error) {
-    console.error('Error adding to cart:', error);
+    console.error("Error adding to cart:", error);
     res.status(500).json({
-      error: 'Failed to add item to cart',
-      details: error.message
+      error: "Failed to add item to cart",
+      details: error.message,
     });
   }
 });
 
-router.post('/recommendations', async (req, res) => {
-  req.user = { id: '6873b2c293e7ada8c58dac89' }; // 🔐 Anita Sharma (Hardcoded User ID)
+router.post("/recommendations", async (req, res) => {
+  req.user = { id: "6873b2c293e7ada8c58dac89" }; // 🔐 Anita Sharma (Hardcoded User ID)
 
   try {
+    console.log("[POST /recommendations] Incoming body:", req.body);
     const { cartItems } = req.body;
 
     if (!Array.isArray(cartItems)) {
-      return res.status(400).json({ error: 'cartItems must be an array' });
+      console.warn(
+        "[POST /recommendations] cartItems is not an array:",
+        cartItems
+      );
+      return res.status(400).json({ error: "cartItems must be an array" });
     }
 
-    const invalidItems = cartItems.filter(item =>
-      !item.id || !item.category || !item.ingredients
+    const invalidItems = cartItems.filter(
+      (item) => !item.id || !item.category || !item.ingredients
     );
 
     if (invalidItems.length > 0) {
+      console.warn("[POST /recommendations] Invalid cart items:", invalidItems);
       return res.status(400).json({
-        error: 'Each cart item must contain id, category, and ingredients'
+        error: "Each cart item must contain id, category, and ingredients",
       });
     }
 
+    console.log("[POST /recommendations] Valid cartItems:", cartItems);
     const recommendations = await cartController.getCartRecommendations(
       req.user.id,
       cartItems
     );
 
+    console.log(
+      "[POST /recommendations] Recommendations result:",
+      recommendations
+    );
     res.json({
       success: true,
       recommendations,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
   } catch (error) {
-    console.error('Recommendation error:', error);
+    console.error("[POST /recommendations] Recommendation error:", error);
     res.status(500).json({
-      error: 'Failed to generate recommendations',
-      details: error.message
+      error: "Failed to generate recommendations",
+      details: error.message,
     });
   }
 });
