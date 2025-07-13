@@ -127,21 +127,12 @@ const FoodProductCard: React.FC<FoodProductCardProps> = ({
   };
 
   const renderStockIndicator = () => {
-    if (!product.inStock) {
-      return (
-        <span className="text-xs text-red-600 font-semibold">
-          Out of stock
-        </span>
-      );
-    }
-    if (product.stockQuantity && product.stockQuantity < 10) {
-      return (
-        <span className="text-xs text-red-600 font-semibold">
-          Only {product.stockQuantity} left!
-        </span>
-      );
-    }
-    return null;
+
+    return (
+      <span className="text-xs text-red-600 font-semibold">
+        In stock
+      </span>
+    );
   };
 
   return (

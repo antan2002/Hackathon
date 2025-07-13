@@ -814,3 +814,76 @@
 2025-07-13 18:26:01 [[33mwarn[39m]: Invalid product ID format: c001_002
 2025-07-13 18:26:01 [[33mwarn[39m]: Invalid product ID format: c001_002
 2025-07-13 18:26:44 [[31merror[39m]: Error in getHarmfulIngredients:
+2025-07-13 18:36:34 [[32minfo[39m]: Server running on port 5000
+2025-07-13 18:36:36 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 18:42:37 [[32minfo[39m]: Server running on port 5000
+2025-07-13 18:42:39 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 18:47:02 [[32minfo[39m]: Server running on port 5000
+2025-07-13 18:47:04 [[31merror[39m]: Error: querySrv EREFUSED _mongodb._tcp.cluster0.baoicie.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:275:17)
+2025-07-13 18:48:56 [[32minfo[39m]: Server running on port 5000
+2025-07-13 18:48:57 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 19:17:05 [[32minfo[39m]: Server running on port 5000
+2025-07-13 19:17:06 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 19:27:59 [[33mwarn[39m]: Invalid product ID format: c005_009
+2025-07-13 19:27:59 [[33mwarn[39m]: Invalid product ID format: c005_009
+2025-07-13 19:28:16 [[33mwarn[39m]: Invalid product ID format: c005_003
+2025-07-13 19:28:16 [[33mwarn[39m]: Invalid product ID format: c005_003
+2025-07-13 19:29:26 [[33mwarn[39m]: Invalid product ID format: c010_001
+2025-07-13 19:29:26 [[33mwarn[39m]: Invalid product ID format: c010_001
+2025-07-13 19:34:30 [[33mwarn[39m]: Invalid product ID format: c010_001
+2025-07-13 19:34:30 [[33mwarn[39m]: Invalid product ID format: c010_001
+2025-07-13 19:34:46 [[33mwarn[39m]: Invalid product ID format: c010_001
+2025-07-13 19:34:48 [[33mwarn[39m]: Invalid product ID format: c010_001
+2025-07-13 19:35:41 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 19:35:41 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 19:38:40 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 19:38:40 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 19:53:25 [[33mwarn[39m]: Invalid product ID format: c001_003
+2025-07-13 19:53:25 [[33mwarn[39m]: Invalid product ID format: c001_003
+2025-07-13 19:54:14 [[33mwarn[39m]: Invalid product ID format: c001_003
+2025-07-13 19:54:37 [[33mwarn[39m]: Invalid product ID format: c001_003
+2025-07-13 19:55:58 [[33mwarn[39m]: Invalid product ID format: c001_003
+2025-07-13 20:04:48 [[33mwarn[39m]: Invalid product ID format: c005_003
+2025-07-13 20:04:48 [[33mwarn[39m]: Invalid product ID format: c005_003
+2025-07-13 20:05:02 [[33mwarn[39m]: Invalid product ID format: c001_007
+2025-07-13 20:05:02 [[33mwarn[39m]: Invalid product ID format: c001_007
+2025-07-13 20:05:17 [[33mwarn[39m]: Invalid product ID format: c001_007
+2025-07-13 20:05:17 [[33mwarn[39m]: Invalid product ID format: c001_007
+2025-07-13 20:09:19 [[33mwarn[39m]: Invalid product ID format: c001_007
+2025-07-13 20:19:46 [[33mwarn[39m]: Invalid product ID format: c001_007
+2025-07-13 20:20:03 [[33mwarn[39m]: Invalid product ID format: c001_007
+2025-07-13 20:20:03 [[33mwarn[39m]: Invalid product ID format: c001_007
+2025-07-13 20:20:13 [[33mwarn[39m]: Invalid product ID format: c001_007
+2025-07-13 20:28:00 [[31merror[39m]: Error in filterProductsByHealth:
+2025-07-13 20:28:00 [[31merror[39m]: Error in filterProductsByHealth:
+2025-07-13 20:28:00 [[33mwarn[39m]: User not found or missing averageOrderValue
+2025-07-13 20:28:00 [[33mwarn[39m]: User not found or missing averageOrderValue
+2025-07-13 20:28:09 [[31merror[39m]: Error in filterProductsByHealth:
+2025-07-13 20:28:09 [[31merror[39m]: Error in filterProductsByHealth:
+2025-07-13 20:28:09 [[33mwarn[39m]: User not found or missing averageOrderValue
+2025-07-13 20:28:09 [[33mwarn[39m]: User not found or missing averageOrderValue
+2025-07-13 20:28:23 [[32minfo[39m]: Server running on port 5000
+2025-07-13 20:28:24 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 20:28:34 [[33mwarn[39m]: Invalid product ID format: c002_002
+2025-07-13 20:28:34 [[33mwarn[39m]: Invalid product ID format: c002_002
+2025-07-13 20:28:39 [[31merror[39m]: Error in filterProductsByHealth:
+2025-07-13 20:28:39 [[31merror[39m]: Error in filterProductsByHealth:
+2025-07-13 20:28:39 [[33mwarn[39m]: User not found or missing averageOrderValue
+2025-07-13 20:28:39 [[33mwarn[39m]: User not found or missing averageOrderValue
+2025-07-13 20:30:01 [[32minfo[39m]: Server running on port 5000
+2025-07-13 20:30:05 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 20:30:34 [[31merror[39m]: Error in filterProductsByHealth:
+2025-07-13 20:30:34 [[31merror[39m]: Error in filterProductsByHealth:
+2025-07-13 20:30:34 [[33mwarn[39m]: User not found or missing averageOrderValue
+2025-07-13 20:30:34 [[33mwarn[39m]: User not found or missing averageOrderValue
+2025-07-13 20:31:40 [[33mwarn[39m]: Invalid product ID format: c010_020
+2025-07-13 20:31:40 [[31merror[39m]: Error in addToCart:
+2025-07-13 20:32:50 [[33mwarn[39m]: Invalid product ID format: c010_020
+2025-07-13 20:32:51 [[31merror[39m]: Error in addToCart:
+2025-07-13 20:33:44 [[33mwarn[39m]: Invalid product ID format: c010_020
+2025-07-13 20:33:45 [[31merror[39m]: Error in addToCart:
+2025-07-13 20:33:53 [[32minfo[39m]: Server running on port 5000
+2025-07-13 20:33:54 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 20:33:57 [[33mwarn[39m]: Invalid product ID format: c010_020
+2025-07-13 20:33:58 [[31merror[39m]: Error in addToCart:

@@ -67,7 +67,7 @@ const FoodSection: React.FC = () => {
           subcategory: product.subcategory || 'Uncategorized',
           category: product.category || 'Uncategorized', // Required field
           ingredients: product.ingredients || [], // Provide empty array if missing
-          image: product.image || '/placeholder-food.jpg',
+          image: product.imageUrl || '/placeholder-food.jpg',
           inStock: product.inStock !== false // Default to true if not specified
         }));
 

@@ -61,8 +61,13 @@ const users = [
 // Product Import
 async function importProducts() {
   console.log('Importing products...');
-  await Product.deleteMany({});
-  console.log('Cleared old products');
+  try {
+    await Product.deleteMany({});
+    console.log('Cleared old products');
+  } catch (err) {
+    console.error('Error clearing old products:', err);
+    throw err;
+  }
 
   const batchSize = 100;
   for (let i = 0; i < allProducts.length; i += batchSize) {
@@ -72,7 +77,7 @@ async function importProducts() {
       category: product.category,
       ingredients: product.ingredients,
       price: product.price,
-      image: product.image,
+      imageUrl: product.image,
       specifications: {
         quantity: product.specifications.quantity,
         unit: product.specifications.unit,
@@ -90,8 +95,14 @@ async function importProducts() {
       }
     }));
 
-    await Product.insertMany(batch);
-    console.log(` Imported batch ${i / batchSize + 1}`);
+    try {
+      await Product.insertMany(batch);
+      console.log(` Imported batch ${i / batchSize + 1}`);
+    } catch (err) {
+      console.error(`Error importing batch ${i / batchSize + 1}:`, err);
+      // Optionally, continue with next batch or break
+      // break;
+    }
   }
 
   console.log(' All products imported');

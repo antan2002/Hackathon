@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Star, ChevronLeft, ChevronRight, ShoppingCart, Leaf, Thermometer, Calendar, Box } from 'lucide-react';
+import { Star, ShoppingCart, Leaf, Thermometer, Calendar, Box } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 interface NutritionInfo {
@@ -34,7 +34,7 @@ interface Product {
   popularityScore: number;
   createdAt: string;
   updatedAt: string;
-  images?: string[];
+  imageUrl?: string;
   inStock?: boolean;
   stockQuantity?: number;
   originalPrice?: number;
@@ -45,7 +45,6 @@ interface Product {
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const { addToCart } = useCart();
@@ -91,7 +90,7 @@ const ProductDetail: React.FC = () => {
       id: product.id,
       title: product.name,
       price: product.price,
-      image: product.images?.[0] || '/placeholder-vegetable.png',
+      image: product.imageUrl || '/placeholder-vegetable.png',
       quantity: 1,
       maxQuantity: product.stockQuantity || product.specifications.quantity || 99,
       inStock: product.inStock ?? true,
@@ -118,9 +117,8 @@ const ProductDetail: React.FC = () => {
 
   const formattedDate = new Date(product.createdAt).toLocaleDateString();
 
-  // Safe check for images array
-  const hasMultipleImages = product.images && product.images.length > 1;
-  const currentImage = product.images?.[currentImageIndex] || '/placeholder-vegetable.png';
+  // Safe check for imageUrl array
+  const currentImage = product.imageUrl || '/placeholder-vegetable.png';
 
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-6">
@@ -135,7 +133,7 @@ const ProductDetail: React.FC = () => {
         </nav>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {/* Product Images */}
+          {/* Product imageUrl */}
           <div className="bg-white p-4 rounded-xl shadow-md">
             <div className="relative">
               <img
@@ -149,22 +147,7 @@ const ProductDetail: React.FC = () => {
                   {discount}% OFF
                 </span>
               )}
-              {hasMultipleImages && (
-                <>
-                  <button
-                    onClick={() => setCurrentImageIndex((prev) => (prev - 1 + product.images!.length) % product.images!.length)}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={() => setCurrentImageIndex((prev) => (prev + 1) % product.images!.length)}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
-                </>
-              )}
+
             </div>
           </div>
 
@@ -250,8 +233,8 @@ const ProductDetail: React.FC = () => {
                 <p><strong>Brand:</strong> {product.specifications.brand}</p>
                 <p><strong>Ingredients:</strong> {product.ingredients.join(', ')}</p>
                 <p><strong>Stock Status:</strong>
-                  <span className={product.inStock ? 'text-green-600 ml-2' : 'text-red-600 ml-2'}>
-                    {product.inStock ? 'In Stock' : 'Out of Stock'}
+                  <span className={'text-green-600 ml-2'}>
+                    {'In Stock'}
                   </span>
                 </p>
                 <p className="flex items-center gap-2">
