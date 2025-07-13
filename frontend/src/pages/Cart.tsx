@@ -11,7 +11,7 @@ const Cart: React.FC = () => {
   const [loading, setLoading] = useState<Record<string, boolean>>({});
   const [error, setError] = useState<string | null>(null);
   const [fetchedItems, setFetchedItems] = useState<Set<string>>(new Set());
-
+  const [recommendationSources, setRecommendationSources] = useState<Set<string>>(new Set());
   const toCartItemRequest = (item: CartItem): CartItemRequest => {
     if (!item.id || !item.category) {
       throw new Error(`Missing required fields for product ${item.id}`);
@@ -87,7 +87,8 @@ const Cart: React.FC = () => {
 
   useEffect(() => {
     const newItems = state.items.filter(item =>
-      !fetchedItems.has(item.id) && !loading[item.id]
+      !fetchedItems.has(item.id) && !loading[item.id] &&
+      !recommendationSources.has(item.id)
     );
 
     if (newItems.length > 0) {
@@ -142,6 +143,7 @@ const Cart: React.FC = () => {
       inStock: false
     };
     addToCart(cartItem);
+    setRecommendationSources(prev => new Set(prev).add(product.id));
   };
 
   const subtotal = state.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);

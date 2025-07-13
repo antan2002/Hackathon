@@ -21,36 +21,35 @@ const Account: React.FC = () => {
   // Hardcoded user data for Anita Sharma
   const [user, setUser] = useState({
     name: 'Anita Sharma',
-    age: 50,
+    age: 25,
     email: 'anita.sharma@gmail.com',
     healthConditions: ['hypertension', 'diabetes'],
     previousOrders: [
       {
-        productId: 'p00005',
-        name: 'Natural Orange Juice',
+        productId: 'c001_001',
+        name: 'Fresh Organic Carrots',
         category: 'Vegetables',
-        price: 6.61,
+        price: 45.50,
         nutritionInfo: {
-          calories: 74,
-          protein: 20.0,
-          fiber: 8.9,
-          sugar: 20.7
+          calories: 41,
+          protein: 0.9,
+          sodium: 69,
+          sugar: 4.7
         },
-        purchasedAt: '2024-05-15',
-        status: 'Delivered'
+        purchasedAt: new Date('2024-05-15')
       },
       {
-        productId: 'p00003',
-        name: 'Organic Bell Pepper',
-        category: 'Vegetables',
-        price: 11.02,
+        productId: 'c003_002',
+        name: 'Mother Dairy Curd',
+        category: 'Dairy',
+        price: 45.75,
         nutritionInfo: {
-          calories: 73,
-          protein: 7.4,
-          fiber: 7.3,
-          sugar: 0.4
+          calories: 98,
+          protein: 3.5,
+          cholesterol: 5,
+          sugar: 4.9
         },
-        purchasedAt: '2024-06-20',
+        purchasedAt: new Date('2024-06-20'),
         status: 'Delivered'
       }
     ],
@@ -222,7 +221,7 @@ const Account: React.FC = () => {
                         <div className="grid grid-cols-2 gap-2 text-sm">
                           <p><strong>Calories:</strong> {order.nutritionInfo.calories}</p>
                           <p><strong>Protein:</strong> {order.nutritionInfo.protein}g</p>
-                          <p><strong>Fiber:</strong> {order.nutritionInfo.fiber}g</p>
+                          <p><strong>Fiber:</strong> {order.nutritionInfo.sodium}g</p>
                           <p><strong>Sugar:</strong> {order.nutritionInfo.sugar}g</p>
                         </div>
                       </div>

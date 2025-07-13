@@ -22,10 +22,41 @@ const Navbar: React.FC = () => {
     'Toys & Games'
   ];
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`/products?search=${encodeURIComponent(searchQuery)}`);
+    const query = searchQuery.trim();
+
+    if (!query) return; // Don't proceed if search is empty
+
+    try {
+      setSearchQuery('');
+      // 1. First try searching via API
+      const response = await fetch(`http://localhost:5000/api/products/search?query=${encodeURIComponent(query)}`);
+
+      if (!response.ok) {
+        throw new Error('Search failed');
+      }
+
+      const data = await response.json();
+
+      // 2. If we get results, navigate to products page with the search term
+      if (data.length > 0) {
+        const currentPath = window.location.pathname;
+
+        if (currentPath.startsWith('/category/')) {
+          const category = currentPath.split('/')[2];
+          navigate(`/products?category=${encodeURIComponent(category)}&search=${encodeURIComponent(query)}`);
+        } else {
+          navigate(`/products?search=${encodeURIComponent(query)}`);
+        }
+      } else {
+        // 3. If no results, show message or navigate to empty results page
+        navigate(`/products?search=${encodeURIComponent(query)}&noresults=true`);
+      }
+    } catch (error) {
+      console.error('Search error:', error);
+      // Fallback to client-side navigation if API fails
+      navigate(`/products?search=${encodeURIComponent(query)}`);
     }
   };
 
@@ -47,8 +78,8 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-[#ffc220] text-[#0071ce] px-3 py-1 rounded font-bold text-xl">
-              W
+            <div className="flex items-center">
+              <img src="./download.png" alt="Walmart Logo" className="h-20 w-auto" />
             </div>
             <span className="font-bold text-xl hidden sm:block">Walmart</span>
           </Link>

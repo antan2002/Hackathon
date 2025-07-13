@@ -758,3 +758,52 @@
 2025-07-13 11:23:41 [[33mwarn[39m]: Invalid product ID format: 3332
 2025-07-13 11:23:41 [[33mwarn[39m]: Invalid product ID format: 3332
 2025-07-13 11:24:22 [[31merror[39m]: Error in getHarmfulIngredients:
+2025-07-13 13:13:27 [[32minfo[39m]: Server running on port 5000
+2025-07-13 13:13:30 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 13:15:12 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:15:12 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:15:18 [[33mwarn[39m]: Invalid product ID format: 24
+2025-07-13 13:15:19 [[33mwarn[39m]: Invalid product ID format: 24
+2025-07-13 13:15:48 [[31merror[39m]: Error in getHarmfulIngredients:
+2025-07-13 13:18:50 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:18:51 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:22:05 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:22:06 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:24:25 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:24:25 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:27:44 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:27:45 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:33:19 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:33:19 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:34:33 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:34:33 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:36:00 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:36:00 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:36:05 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:36:05 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:36:16 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:36:16 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:36:36 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 13:36:36 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 17:35:42 [[32minfo[39m]: Server running on port 5000
+2025-07-13 17:35:46 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 17:37:06 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 17:37:06 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 17:37:20 [[33mwarn[39m]: Invalid product ID format: c001_002
+2025-07-13 17:37:20 [[33mwarn[39m]: Invalid product ID format: c001_002
+2025-07-13 17:38:38 [[33mwarn[39m]: Invalid product ID format: c002_009
+2025-07-13 17:38:39 [[33mwarn[39m]: Invalid product ID format: c002_009
+2025-07-13 17:39:13 [[33mwarn[39m]: Invalid product ID format: c002_003
+2025-07-13 17:39:13 [[33mwarn[39m]: Invalid product ID format: c002_003
+2025-07-13 17:46:12 [[32minfo[39m]: Server running on port 5000
+2025-07-13 17:46:13 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 18:09:14 [[32minfo[39m]: Server running on port 5000
+2025-07-13 18:09:17 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 18:11:22 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 18:11:23 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 18:13:14 [[33mwarn[39m]: Invalid product ID format: c009_003
+2025-07-13 18:13:15 [[33mwarn[39m]: Invalid product ID format: c009_003
+2025-07-13 18:15:01 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 18:15:01 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 18:16:35 [[33mwarn[39m]: Invalid product ID format: c002_002
+2025-07-13 18:16:35 [[33mwarn[39m]: Invalid product ID format: c002_002
