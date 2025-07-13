@@ -3,21 +3,33 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, Truck, Shield, RefreshCw, HeadphonesIcon } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 
+// Define interfaces in a separate file (types.ts) in a real project
+interface ProductSpecifications {
+  quantity?: number;
+  unit?: string;
+  organic?: boolean;
+  storageInstructions?: string;
+  nutritionInfo?: Record<string, string | number>;
+  refrigerated?: boolean;
+  frozen?: boolean;
+}
+
 interface Product {
   id: string;
-  title: string;
-  brand: string;
+  name: string;
+  title: string; // Made required
+  category: string;
+  ingredients: string[];
   price: number;
   originalPrice?: number;
   image: string;
+  images?: string[];
   rating: number;
   reviews: number;
   inStock: boolean;
   stockQuantity?: number;
-  unit?: string;
-  expiryInfo?: string;
-  refrigerated?: boolean;
-  frozen?: boolean;
+  brand: string;
+  specifications: ProductSpecifications;
 }
 
 const Homepage: React.FC = () => {
@@ -27,26 +39,38 @@ const Homepage: React.FC = () => {
     const fetchFeatured = async () => {
       try {
         const res = await fetch('http://localhost:5000/api/products/featured');
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
         const data = await res.json();
-        const mapped = data.slice(0, 4).map((p: any) => ({
+        const mapped: Product[] = data.slice(0, 4).map((p: any) => ({
           id: p.id,
-          title: p.name,
-          brand: p.specifications?.brand || 'Unknown',
+          name: p.name,
+          title: p.name, // Using name as title fallback
+          category: p.category,
+          ingredients: p.ingredients || [],
           price: p.price,
-          originalPrice: p.originalPrice || undefined,
+          originalPrice: p.originalPrice,
           image: p.image || '/placeholder.png',
+          images: p.images || [],
           rating: p.rating || 4,
           reviews: p.reviews || 100,
-          inStock: true,
-          stockQuantity: p.specifications?.quantity || 10,
-          unit: `${p.specifications?.quantity || ''} ${p.specifications?.unit || ''}`,
-          expiryInfo: p.specifications?.storageInstructions || '',
-          refrigerated: p.specifications?.refrigerated || false,
-          frozen: p.specifications?.frozen || false,
+          inStock: p.inStock !== false,
+          stockQuantity: p.stockQuantity || p.specifications?.quantity,
+          brand: p.specifications?.brand || 'Unknown Brand',
+          specifications: {
+            quantity: p.specifications?.quantity,
+            unit: p.specifications?.unit,
+            organic: p.specifications?.organic,
+            storageInstructions: p.specifications?.storageInstructions,
+            nutritionInfo: p.specifications?.nutritionInfo,
+            refrigerated: p.specifications?.refrigerated,
+            frozen: p.specifications?.frozen
+          }
         }));
         setFeaturedProducts(mapped);
       } catch (error) {
-        console.error('Failed to fetch featured products', error);
+        console.error('Failed to fetch featured products:', error);
       }
     };
     fetchFeatured();

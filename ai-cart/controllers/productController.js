@@ -5,7 +5,7 @@ async function getProductById(id) {
 }
 
 async function searchProducts(filters) {
-    return await Product.find(filters).limit(50); // Optional: add pagination
+    return await Product.find(filters).limit(1000);
 }
 
 async function getProductsByCategory(category, limit = 20, offset = 0) {

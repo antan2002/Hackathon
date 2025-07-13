@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Star, Heart, ShoppingCart, Clock, Thermometer } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
+import { CartItem } from '../types/cart';
 
 interface NutritionFacts {
   calories: number;
@@ -29,6 +30,8 @@ interface FoodProduct {
   refrigerated?: boolean;
   frozen?: boolean;
   nutritionFacts?: NutritionFacts;
+  category: string;
+  ingredients: string[];
 }
 
 interface FoodProductCardProps {
@@ -55,14 +58,19 @@ const FoodProductCard: React.FC<FoodProductCardProps> = ({
     e.preventDefault();
     e.stopPropagation();
 
-    const result = addToCart({
+    const cartItem: CartItem = {
       id: product.id,
       title: product.title,
       price: product.price,
       image: product.image,
       quantity: 1,
-      maxQuantity: product.stockQuantity || 99
-    });
+      maxQuantity: product.stockQuantity || 99,
+      category: product.category,
+      ingredients: product.ingredients,
+      inStock: product.inStock
+    };
+
+    const result = addToCart(cartItem);
 
     if (result.success) {
       onAddToCart?.(product.id);
@@ -86,7 +94,11 @@ const FoodProductCard: React.FC<FoodProductCardProps> = ({
         title: product.title,
         price: product.price,
         image: product.image,
-        brand: product.brand
+        brand: product.brand,
+        category: product.category // Now this will work
+        ,
+        ingredients: [],
+        inStock: false
       });
       if (result.success) {
         onWishlistToggle?.(product.id, true);

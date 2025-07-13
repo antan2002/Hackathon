@@ -1,6 +1,9 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
 
 export interface WishlistItem {
+  category: string;
+  ingredients: string[];
+  inStock: boolean;
   id: string;
   title: string;
   price: number;

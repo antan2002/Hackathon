@@ -23,7 +23,7 @@ const Account: React.FC = () => {
     name: 'Anita Sharma',
     age: 50,
     email: 'anita.sharma@gmail.com',
-    healthConditions: ['hypertension'],
+    healthConditions: ['hypertension', 'diabetes'],
     previousOrders: [
       {
         productId: 'p00005',

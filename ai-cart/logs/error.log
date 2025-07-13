@@ -374,3 +374,5 @@
     at async C:\Users\cngep\Documents\GitHub\Hackathon\ai-cart\routes\cartRoutes.js:49:20
 2025-07-11 20:56:03 [[31merror[39m]: Product validation error: Operation `products.findOne()` buffering timed out after 10000ms
 2025-07-11 20:56:03 [[31merror[39m]: Error in addToCart:
+2025-07-13 00:50:52 [[31merror[39m]: Error in getHarmfulIngredients:
+2025-07-13 11:24:22 [[31merror[39m]: Error in getHarmfulIngredients:

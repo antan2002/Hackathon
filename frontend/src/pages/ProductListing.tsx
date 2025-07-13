@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Filter, Grid, List } from 'lucide-react';
+import { Grid, List } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 
 interface Product {
-  id: string; // Match backend
-  title: string; // Map from name
-  brand: string; // Map from specifications.brand
+  id: string;
+  name: string;
+  title: string;
+  brand: string;
   price: number;
   originalPrice?: number;
   image: string;
+  images?: string[];
   rating: number;
   reviews: number;
   inStock: boolean;
@@ -18,6 +20,19 @@ interface Product {
   expiryInfo?: string;
   refrigerated?: boolean;
   frozen?: boolean;
+  category: string;
+  ingredients: string[];
+  specifications: {
+    brand?: string;
+    quantity?: number;
+    unit?: string;
+    organic?: boolean;
+    storageInstructions?: string;
+    nutritionInfo?: Record<string, string | number>;
+    refrigerated?: boolean;
+    frozen?: boolean;
+  };
+  popularityScore?: number;
 }
 
 const ProductListing: React.FC = () => {
@@ -26,6 +41,8 @@ const ProductListing: React.FC = () => {
   const [sortBy, setSortBy] = useState('featured');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [filters, setFilters] = useState({ category: '', priceRange: '' });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const category = searchParams.get('category');
   const searchQuery = searchParams.get('search');
@@ -33,6 +50,9 @@ const ProductListing: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        setLoading(true);
+        setError(null);
+
         const params = new URLSearchParams();
         if (searchQuery) params.append('query', searchQuery);
         if (category) params.append('category', category);
@@ -43,28 +63,43 @@ const ProductListing: React.FC = () => {
         }
 
         const res = await fetch(`http://localhost:5000/api/products/search?${params.toString()}`);
-        const raw = await res.json();
 
-        const mapped: Product[] = raw.map((p: any) => ({
+        if (!res.ok) {
+          throw new Error(`Failed to fetch products: ${res.status}`);
+        }
+
+        const rawProducts = await res.json();
+        console.log('Fetched products:', rawProducts); // Log fetched products to console
+
+        const mapped: Product[] = rawProducts.map((p: any) => ({
           id: p.id,
+          name: p.name,
           title: p.name,
+          category: p.category,
+          ingredients: p.ingredients || [],
           brand: p.specifications?.brand || 'Unknown',
           price: p.price,
           originalPrice: p.originalPrice || undefined,
           image: p.image ? p.image : '/placeholder.png',
+          images: p.images || [],
           rating: p.rating || 4,
           reviews: p.reviews || 100,
-          inStock: true,
-          stockQuantity: p.specifications?.quantity || 10,
-          unit: `${p.specifications?.quantity || ''} ${p.specifications?.unit || ''}`,
+          inStock: p.inStock !== false,
+          stockQuantity: p.stockQuantity || p.specifications?.quantity || 10,
+          unit: p.specifications?.unit || '',
           expiryInfo: p.specifications?.storageInstructions || '',
           refrigerated: p.specifications?.refrigerated || false,
           frozen: p.specifications?.frozen || false,
+          specifications: p.specifications || {},
+          popularityScore: p.popularityScore || 0
         }));
 
         setProducts(mapped);
       } catch (err) {
         console.error('Failed to fetch products', err);
+        setError('Failed to load products. Please try again later.');
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -78,6 +113,10 @@ const ProductListing: React.FC = () => {
   let sortedProducts = [...products];
   if (sortBy === 'price-low') sortedProducts.sort((a, b) => a.price - b.price);
   else if (sortBy === 'price-high') sortedProducts.sort((a, b) => b.price - a.price);
+  else if (sortBy === 'popularity') sortedProducts.sort((a, b) => (b.popularityScore || 0) - (a.popularityScore || 0));
+
+  if (loading) return <div className="min-h-screen p-6 text-center">Loading products...</div>;
+  if (error) return <div className="min-h-screen p-6 text-center text-red-600">{error}</div>;
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -85,6 +124,7 @@ const ProductListing: React.FC = () => {
         <div className="mb-6 flex justify-between items-center">
           <h1 className="text-2xl font-bold">
             {category ? category : searchQuery ? `Search results for "${searchQuery}"` : 'All Products'}
+            <span className="text-sm text-gray-500 ml-2">({products.length} items)</span>
           </h1>
           <div className="flex items-center gap-4">
             <select
@@ -95,6 +135,7 @@ const ProductListing: React.FC = () => {
               <option value="featured">Featured</option>
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
+              <option value="popularity">Popularity</option>
             </select>
             <button onClick={() => setViewMode('grid')}>
               <Grid className={`w-5 h-5 ${viewMode === 'grid' ? 'text-blue-500' : ''}`} />
@@ -105,11 +146,27 @@ const ProductListing: React.FC = () => {
           </div>
         </div>
 
-        <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>
-          {sortedProducts.map(product => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        {products.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No products found matching your criteria.</p>
+            <button
+              onClick={clearFilters}
+              className="mt-4 text-blue-600 hover:underline"
+            >
+              Clear all filters
+            </button>
+          </div>
+        ) : (
+          <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>
+            {sortedProducts.map(product => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                viewMode={viewMode}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

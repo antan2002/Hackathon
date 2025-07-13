@@ -1,15 +1,7 @@
+// context/CartContext.tsx
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
-
-interface CartItem {
-  id: string;
-  title: string;
-  price: number;
-  image: string;
-  quantity: number;
-  variant?: string;
-  maxQuantity?: number;
-  inStock?: boolean;
-}
+import { CartItem } from '../types/cart';
+import { FoodProduct } from '../types/product';
 
 interface CartState {
   items: CartItem[];
@@ -26,12 +18,13 @@ type CartAction =
 interface CartContextType {
   state: CartState;
   dispatch: React.Dispatch<CartAction>;
-  addToCart: (item: CartItem) => { success: boolean; message: string };
+  addToCart: (product: FoodProduct, quantity?: number) => { success: boolean; message: string };
   updateQuantity: (id: string, quantity: number, variant?: string) => { success: boolean; message: string };
   removeFromCart: (id: string, variant?: string) => void;
   clearCart: () => void;
   getCartTotal: () => number;
   getCartItemCount: () => number;
+  getRecommendations: () => CartItem[];
 }
 
 const CartContext = createContext<CartContextType | null>(null);
@@ -110,7 +103,23 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, { items: [], total: 0, itemCount: 0 });
 
-  const addToCart = (item: CartItem): { success: boolean; message: string } => {
+  const convertToCartItem = (product: FoodProduct, quantity: number = 1): CartItem => {
+    return {
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image,
+      quantity,
+      maxQuantity: 99,
+      inStock: product.inStock,
+      category: product.category,
+      ingredients: product.ingredients,
+      // Add any additional properties needed
+    };
+  };
+
+  const addToCart = (product: FoodProduct, quantity: number = 1): { success: boolean; message: string } => {
+    const item = convertToCartItem(product, quantity);
     const existingItem = state.items.find(
       i => i.id === item.id && (i.variant || '') === (item.variant || '')
     );
@@ -129,7 +138,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     dispatch({ type: 'ADD_TO_CART', payload: item });
     return {
       success: true,
-      message: `${item.title} (${item.variant || 'default'}) added to cart successfully!`
+      message: `${item.title} added to cart successfully!`
     };
   };
 
@@ -165,6 +174,16 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const getCartTotal = () => state.total;
   const getCartItemCount = () => state.itemCount;
 
+  const getRecommendations = (): CartItem[] => {
+    // Basic recommendation logic - you can enhance this
+    if (state.items.length === 0) return [];
+
+    const categories = new Set(state.items.map(item => item.category));
+    return state.items
+      .filter(item => categories.has(item.category))
+      .slice(0, 4); // Return max 4 recommendations
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -176,6 +195,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         clearCart,
         getCartTotal,
         getCartItemCount,
+        getRecommendations,
       }}
     >
       {children}

@@ -9,7 +9,9 @@ interface Product {
   rating: number;
   subcategory: string;
   category: string;
+  ingredients: string[];
   image?: string;
+  inStock?: boolean;
 }
 
 const FoodSection: React.FC = () => {
@@ -56,7 +58,20 @@ const FoodSection: React.FC = () => {
         const data = await res.json();
         if (!Array.isArray(data)) throw new Error('Invalid JSON response');
 
-        setProducts(data);
+        // Ensure all products have required fields with proper fallbacks
+        const completeProducts = data.map(product => ({
+          id: product.id,
+          name: product.name || 'Unnamed Product',
+          price: product.price || 0,
+          rating: product.rating || 0,
+          subcategory: product.subcategory || 'Uncategorized',
+          category: product.category || 'Uncategorized', // Required field
+          ingredients: product.ingredients || [], // Provide empty array if missing
+          image: product.image || '/placeholder-food.jpg',
+          inStock: product.inStock !== false // Default to true if not specified
+        }));
+
+        setProducts(completeProducts);
       } catch (err) {
         console.error('Failed to fetch products:', err);
         setProducts([]);
@@ -189,14 +204,16 @@ const FoodSection: React.FC = () => {
                 <FoodProductCard
                   key={product.id}
                   product={{
-                    id: product.id, // keep string id as is
-                    title: product.name, // map name -> title
-                    brand: 'Generic', // update if actual brand available
+                    id: product.id,
+                    title: product.name,
+                    brand: 'Generic',
                     price: product.price,
                     rating: product.rating,
-                    reviews: 0, // replace with actual if available
-                    inStock: true, // replace with actual stock info if available
+                    reviews: 0,
+                    inStock: true,
                     image: product.image ?? '',
+                    category: product.category,
+                    ingredients: product.ingredients || []
                   }}
                 />
               ))}

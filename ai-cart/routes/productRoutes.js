@@ -29,7 +29,7 @@ router.get('/search', async (req, res) => {
 router.get('/category/:category', async (req, res) => {
   try {
     const { category } = req.params;
-    const { limit = 20, offset = 0 } = req.query;
+    const { limit = 500, offset = 0 } = req.query;
 
     const products = await productController.getProductsByCategory(
       category,

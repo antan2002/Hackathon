@@ -3,28 +3,37 @@ import { Link } from 'react-router-dom';
 import { Heart, ShoppingCart } from 'lucide-react';
 import { useWishlist, WishlistItem } from '../context/WishlistContext';
 import { useCart } from '../context/CartContext';
+import { CartItem } from '../types/cart';
 
 const Wishlist: React.FC = () => {
-  const { state: wishlistState, removeFromWishlist } = useWishlist(); // Updated to use the new method
+  const { state: wishlistState, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
 
-  const handleRemoveFromWishlist = (id: string) => { // Changed to string
-    const result = removeFromWishlist(id);
-    if (!result.success) {
-      console.warn(result.message);
+  const handleRemoveFromWishlist = async (id: string) => {
+    try {
+      const result = await removeFromWishlist(id);
+      if (!result.success) {
+        console.warn(result.message);
+      }
+    } catch (error) {
+      console.error('Failed to remove from wishlist:', error);
     }
   };
 
   const handleAddToCart = (item: WishlistItem) => {
-    const result = addToCart({
+    const cartItem: CartItem = {
       id: item.id,
       title: item.title,
       price: item.price,
       image: item.image,
       quantity: 1,
       maxQuantity: 99,
-    });
+      category: item.category,
+      ingredients: item.ingredients,
+      inStock: item.inStock
+    };
 
+    const result = addToCart(cartItem);
     if (!result.success) {
       alert(result.message);
     }
@@ -54,14 +63,14 @@ const Wishlist: React.FC = () => {
         <h1 className="text-3xl font-bold mb-8">My Wishlist ({wishlistState.items.length} items)</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {wishlistState.items.map((item: WishlistItem) => (
-            <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+          {wishlistState.items.map((item) => (
+            <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden group">
               <div className="relative">
-                <Link to={`/product/${item.id}`}>
+                <Link to={`/product/${item.id}`} className="block">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                 </Link>
@@ -75,7 +84,7 @@ const Wishlist: React.FC = () => {
               </div>
 
               <div className="p-4">
-                <p className="text-sm text-gray-500 mb-1">{item.brand}</p>
+                {item.brand && <p className="text-sm text-gray-500 mb-1">{item.brand}</p>}
                 <Link to={`/product/${item.id}`}>
                   <h3 className="font-medium text-gray-900 mb-2 line-clamp-2 hover:text-[#0071ce] transition-colors">
                     {item.title}
@@ -84,6 +93,9 @@ const Wishlist: React.FC = () => {
 
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-lg font-bold text-gray-900">${item.price.toFixed(2)}</span>
+                  <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                    {item.category}
+                  </span>
                 </div>
 
                 <button
@@ -100,8 +112,14 @@ const Wishlist: React.FC = () => {
         </div>
 
         <div className="mt-8 text-center">
-          <Link to="/products" className="text-[#0071ce] hover:underline font-semibold">
-            Continue Shopping
+          <Link
+            to="/products"
+            className="text-[#0071ce] hover:underline font-semibold inline-flex items-center"
+          >
+            <span>Continue Shopping</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
           </Link>
         </div>
       </div>

@@ -720,3 +720,41 @@
 2025-07-12 16:37:58 [[33mwarn[39m]: Invalid product ID format: featured
 2025-07-12 20:09:42 [[32minfo[39m]: Server running on port 5000
 2025-07-12 20:09:51 [[32minfo[39m]: MongoDB connected successfully
+2025-07-12 20:58:52 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 20:58:52 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 21:13:38 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 21:13:39 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 23:35:22 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-12 23:35:22 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 00:47:04 [[32minfo[39m]: Server running on port 5000
+2025-07-13 00:47:06 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 00:49:51 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 00:49:52 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 00:50:07 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 00:50:07 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 00:50:52 [[31merror[39m]: Error in getHarmfulIngredients:
+2025-07-13 01:00:54 [[32minfo[39m]: Server running on port 5000
+2025-07-13 01:00:56 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 01:06:38 [[32minfo[39m]: Server running on port 5000
+2025-07-13 01:06:39 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 01:10:53 [[32minfo[39m]: Server running on port 5000
+2025-07-13 01:10:56 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 01:12:22 [[32minfo[39m]: Server running on port 5000
+2025-07-13 01:12:24 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 11:02:24 [[32minfo[39m]: Server running on port 5000
+2025-07-13 11:02:30 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 11:04:16 [[32minfo[39m]: Server running on port 5000
+2025-07-13 11:04:18 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 11:05:11 [[33mwarn[39m]: Invalid product ID format: 8082
+2025-07-13 11:09:13 [[32minfo[39m]: Server running on port 5000
+2025-07-13 11:09:16 [[32minfo[39m]: MongoDB connected successfully
+2025-07-13 11:10:42 [[33mwarn[39m]: Invalid product ID format: 808
+2025-07-13 11:17:23 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 11:17:23 [[33mwarn[39m]: Invalid product ID format: featured
+2025-07-13 11:17:56 [[33mwarn[39m]: Invalid product ID format: 9525
+2025-07-13 11:17:57 [[33mwarn[39m]: Invalid product ID format: 9525
+2025-07-13 11:20:28 [[33mwarn[39m]: Invalid product ID format: 3331
+2025-07-13 11:20:28 [[33mwarn[39m]: Invalid product ID format: 3331
+2025-07-13 11:23:41 [[33mwarn[39m]: Invalid product ID format: 3332
+2025-07-13 11:23:41 [[33mwarn[39m]: Invalid product ID format: 3332
+2025-07-13 11:24:22 [[31merror[39m]: Error in getHarmfulIngredients:
