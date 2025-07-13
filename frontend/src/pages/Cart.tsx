@@ -65,7 +65,7 @@ const Cart: React.FC = () => {
           price: rec.price,
           category: rec.category,
           ingredients: rec.ingredients,
-          image: rec.image || '/placeholder-product.jpg',
+          image: rec.imageUrl || '/placeholder-product.jpg',
           reasoning: explanationObj?.reasoning || 'Recommended based on your preferences',
           healthIndex: metricObj?.healthIndex || 0,
           valueScore: metricObj?.valueScore || 0,

@@ -80,7 +80,7 @@ const ProductListing: React.FC = () => {
           brand: p.specifications?.brand || 'Unknown',
           price: p.price,
           originalPrice: p.originalPrice || undefined,
-          image: p.image ? p.image : '/placeholder.png',
+          image: p.imageUrl || '/placeholder.png',
           images: p.images || [],
           rating: p.rating || 4,
           reviews: p.reviews || 100,
