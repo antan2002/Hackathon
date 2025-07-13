@@ -128,11 +128,17 @@ const Cart: React.FC = () => {
     );
 
     if (newItems.length > 0) {
-      newItems.forEach((item, index) => {
-        setTimeout(() => fetchRecommendations(item), index * 300);
-      });
+      const processItem = async (item: CartItem) => {
+        await fetchRecommendations(item);
+      };
+
+      // Process items sequentially instead of using setTimeout
+      newItems.reduce(
+        (promise, item) => promise.then(() => processItem(item)),
+        Promise.resolve()
+      );
     }
-  }, [state.items, fetchRecommendations, fetchedItems, loading]);
+  }, [state.items, fetchedItems, recommendationSources, fetchRecommendations]);
 
   // Rest of the component remains the same...
   const handleIncreaseQuantity = (id: string) => {
@@ -359,7 +365,7 @@ const Cart: React.FC = () => {
                           )}
 
                           <p className="text-gray-900 font-medium mb-1">
-                            ${rec.price.toFixed(2)}
+                            ₹{rec.price.toFixed(2)}
                           </p>
 
                           {rec.reasoning && (

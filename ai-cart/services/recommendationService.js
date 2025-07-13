@@ -106,7 +106,7 @@ async function getCategorySpecificRecommendations(userId, cartItems = []) {
         typeof r === "string" ? { id: r } : r
       );
       explanation = recommendations.map((r) => r.reasoning || "");
-      console.log("Parsed recommendations:", recommendations);
+      console.log("Parsed recommendations:", JSON.stringify(recommendations, null, 2));
     } catch (e) {
       logger.error("Failed to parse recommendations LLM response", recText);
     }
@@ -114,13 +114,26 @@ async function getCategorySpecificRecommendations(userId, cartItems = []) {
       throw new Error("LLM did not return recommendations");
 
     // Fetch recommended product details
-    const recommendedIds = recommendations.map((r) => r.id);
+    const recommendedIds = recommendations.map((r) => r.id || r.productId);
+    console.log("Looking for these product IDs:", recommendedIds);
+    console.log("Available products:", productsForRecommendation.map(p => ({ id: p.id, name: p.name })));
+
+    // Debug logging for ID matching
+    productsForRecommendation.forEach(p => {
+      console.log(`Checking product ${p.id} (${typeof p.id}):`,
+        recommendedIds.includes(p.id),
+        "Matches any?:", recommendedIds.some(rid => rid === p.id)
+      );
+    });
+
     const recommendedProducts = productsForRecommendation.filter((p) =>
       recommendedIds.includes(p.id)
     );
     console.log(
       "Recommended products fetched. Count:",
-      recommendedProducts.length
+      recommendedProducts.length,
+      "\nMatched products:",
+      JSON.stringify(recommendedProducts.map(p => ({ id: p.id, name: p.name })), null, 2)
     );
 
     // Generate nutrition metrics for recommended products
