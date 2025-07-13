@@ -8,7 +8,7 @@ router.post('/add', async (req, res) => {
     const { productId } = req.body;
 
     // TEMP: Hardcoded User ID for testing (Anita Sharma)
-    req.user = { id: '6873437392723f1359b41577' };
+    req.user = { id: '6873a66a8d168784969e9ef1' };
 
     if (!validateProductId(productId)) {
       return res.status(400).json({ error: 'Invalid product ID format' });
@@ -37,7 +37,7 @@ router.post('/add', async (req, res) => {
 });
 
 router.post('/recommendations', async (req, res) => {
-  req.user = { id: '6873437392723f1359b41577' }; // 🔐 Anita Sharma (Hardcoded User ID)
+  req.user = { id: '6873a66a8d168784969e9ef1' }; // 🔐 Anita Sharma (Hardcoded User ID)
 
   try {
     const { cartItems } = req.body;

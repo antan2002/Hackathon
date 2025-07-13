@@ -25,7 +25,8 @@ const productSchema = new mongoose.Schema({
   ingredients: { type: [String], required: true },
   price: { type: Number, required: true },
   specifications: specificationSchema,
-  popularityScore: { type: Number, default: 0 }
+  popularityScore: { type: Number, default: 0 },
+  imageUrl: { type: String }
 }, { timestamps: true });
 
 // Create indexes for faster queries

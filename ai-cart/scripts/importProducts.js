@@ -29,28 +29,28 @@ const users = [
     healthConditions: ['hypertension'],
     previousOrders: [
       {
-        productId: 'p00005',
-        name: 'Natural Orange Juice',
+        productId: 'c001_001',
+        name: 'Fresh Organic Carrots',
         category: 'Vegetables',
-        price: 6.61,
+        price: 45.50,
         nutritionInfo: {
-          calories: 74,
-          protein: 20.0,
-          fiber: 8.9,
-          sugar: 20.7
+          calories: 41,
+          protein: 0.9,
+          sodium: 69,
+          sugar: 4.7
         },
         purchasedAt: new Date('2024-05-15')
       },
       {
-        productId: 'p00003',
-        name: 'Organic Bell Pepper',
-        category: 'Vegetables',
-        price: 11.02,
+        productId: 'c003_002',
+        name: 'Mother Dairy Curd',
+        category: 'Dairy',
+        price: 45.75,
         nutritionInfo: {
-          calories: 73,
-          protein: 7.4,
-          fiber: 7.3,
-          sugar: 0.4
+          calories: 98,
+          protein: 3.5,
+          cholesterol: 5,
+          sugar: 4.9
         },
         purchasedAt: new Date('2024-06-20')
       }
@@ -72,6 +72,7 @@ async function importProducts() {
       category: product.category,
       ingredients: product.ingredients,
       price: product.price,
+      image: product.image,
       specifications: {
         quantity: product.specifications.quantity,
         unit: product.specifications.unit,
