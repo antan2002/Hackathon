@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ChevronRight, Truck, Shield, RefreshCw, HeadphonesIcon } from 'lucide-react';
-import ProductCard from '../components/ProductCard';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  ChevronRight,
+  Truck,
+  Shield,
+  RefreshCw,
+  HeadphonesIcon,
+} from "lucide-react";
+import ProductCard from "../components/ProductCard";
 
 // Define interfaces in a separate file (types.ts) in a real project
 interface ProductSpecifications {
@@ -38,7 +44,7 @@ const Homepage: React.FC = () => {
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/products/featured');
+        const res = await fetch("http://localhost:5000/api/products/featured");
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
@@ -51,13 +57,13 @@ const Homepage: React.FC = () => {
           ingredients: p.ingredients || [],
           price: p.price,
           originalPrice: p.originalPrice,
-          image: p.image || '/placeholder.png',
+          image: p.image || "/placeholder.png",
           images: p.images || [],
           rating: p.rating || 4,
           reviews: p.reviews || 100,
           inStock: p.inStock !== false,
           stockQuantity: p.stockQuantity || p.specifications?.quantity,
-          brand: p.specifications?.brand || 'Unknown Brand',
+          brand: p.specifications?.brand || "Unknown Brand",
           specifications: {
             quantity: p.specifications?.quantity,
             unit: p.specifications?.unit,
@@ -65,12 +71,12 @@ const Homepage: React.FC = () => {
             storageInstructions: p.specifications?.storageInstructions,
             nutritionInfo: p.specifications?.nutritionInfo,
             refrigerated: p.specifications?.refrigerated,
-            frozen: p.specifications?.frozen
-          }
+            frozen: p.specifications?.frozen,
+          },
         }));
         setFeaturedProducts(mapped);
       } catch (error) {
-        console.error('Failed to fetch featured products:', error);
+        console.error("Failed to fetch featured products:", error);
       }
     };
     fetchFeatured();
@@ -78,48 +84,50 @@ const Homepage: React.FC = () => {
 
   const categories = [
     {
-      name: 'Electronics',
-      image: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg',
-      description: 'Latest tech & gadgets'
+      name: "Electronics",
+      image: "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg",
+      description: "Latest tech & gadgets",
     },
     {
-      name: 'Food & Beverages',
-      image: 'https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg',
-      description: 'Fresh groceries & snacks'
+      name: "Food & Beverages",
+      image:
+        "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg",
+      description: "Fresh groceries & snacks",
     },
     {
-      name: 'Clothing & Shoes',
-      image: 'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg',
-      description: 'Fashion for everyone'
+      name: "Clothing & Shoes",
+      image: "https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg",
+      description: "Fashion for everyone",
     },
     {
-      name: 'Home & Kitchen',
-      image: 'https://images.pexels.com/photos/2082090/pexels-photo-2082090.jpeg',
-      description: 'Make your house a home'
+      name: "Home & Kitchen",
+      image:
+        "https://images.pexels.com/photos/2082090/pexels-photo-2082090.jpeg",
+      description: "Make your house a home",
     },
   ];
 
   const features = [
     {
       icon: Truck,
-      title: 'Free Shipping',
-      description: 'On orders $35 or more'
+      title: "Free Shipping",
+      description: "On orders ₹350 or more",
     },
     {
       icon: Shield,
-      title: 'Safe & Secure',
-      description: 'Protected checkout'
+      title: "Safe & Secure",
+      description: "Protected checkout",
     },
     {
       icon: RefreshCw,
-      title: 'Easy Returns',
-      description: '90-day return policy'
+      title: "Easy Returns",
+      description: "90-day return policy",
     },
     {
       icon: HeadphonesIcon,
-      title: '24/7 Support',
-      description: 'Always here to help'
-    }
+      title: "24/7 Support",
+      description: "Always here to help",
+    },
   ];
 
   return (
@@ -135,7 +143,8 @@ const Homepage: React.FC = () => {
                 Live Better.
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Discover amazing deals on everything you need, from groceries to electronics.
+                Discover amazing deals on everything you need, from groceries to
+                electronics.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <Link
@@ -184,7 +193,9 @@ const Homepage: React.FC = () => {
       {/* Categories */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Shop by Category</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Shop by Category
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((category) => (
               <Link
@@ -237,7 +248,8 @@ const Homepage: React.FC = () => {
               Special Offers Just for You
             </h2>
             <p className="text-lg text-gray-700 mb-8">
-              Sign up for our newsletter and get exclusive deals delivered to your inbox
+              Sign up for our newsletter and get exclusive deals delivered to
+              your inbox
             </p>
             <div className="flex flex-col sm:flex-row max-w-md mx-auto">
               <input

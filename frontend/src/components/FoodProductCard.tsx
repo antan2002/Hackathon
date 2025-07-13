@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Star, Heart, ShoppingCart, Clock, Thermometer } from 'lucide-react';
-import { useCart } from '../context/CartContext';
-import { useWishlist } from '../context/WishlistContext';
-import { CartItem } from '../types/cart';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Star, Heart, ShoppingCart, Clock, Thermometer } from "lucide-react";
+import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
+import { CartItem } from "../types/cart";
 
 interface NutritionFacts {
   calories: number;
@@ -43,15 +43,17 @@ interface FoodProductCardProps {
 
 const FoodProductCard: React.FC<FoodProductCardProps> = ({
   product,
-  className = '',
+  className = "",
   onAddToCart,
-  onWishlistToggle
+  onWishlistToggle,
 }) => {
   const { addToCart } = useCart();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
 
   const discount = product.originalPrice
-    ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
+    ? Math.round(
+        ((product.originalPrice - product.price) / product.originalPrice) * 100
+      )
     : 0;
 
   const handleAddToCart = (e: React.MouseEvent) => {
@@ -67,7 +69,7 @@ const FoodProductCard: React.FC<FoodProductCardProps> = ({
       maxQuantity: product.stockQuantity || 99,
       category: product.category,
       ingredients: product.ingredients,
-      inStock: product.inStock
+      inStock: product.inStock,
     };
 
     const result = addToCart(cartItem);
@@ -95,10 +97,9 @@ const FoodProductCard: React.FC<FoodProductCardProps> = ({
         price: product.price,
         image: product.image,
         brand: product.brand,
-        category: product.category // Now this will work
-        ,
+        category: product.category, // Now this will work
         ingredients: [],
-        inStock: false
+        inStock: false,
       });
       if (result.success) {
         onWishlistToggle?.(product.id, true);
@@ -127,12 +128,7 @@ const FoodProductCard: React.FC<FoodProductCardProps> = ({
   };
 
   const renderStockIndicator = () => {
-
-    return (
-      <span className="text-xs text-red-600 font-semibold">
-        In stock
-      </span>
-    );
+    return <span className="text-xs text-red-600 font-semibold">In stock</span>;
   };
 
   return (
@@ -160,13 +156,22 @@ const FoodProductCard: React.FC<FoodProductCardProps> = ({
 
           <button
             onClick={handleWishlistToggle}
-            className={`absolute top-2 right-2 p-2 rounded-full transition-colors ${isInWishlist(product.id)
-              ? 'bg-red-500 text-white hover:bg-red-600'
-              : 'bg-white text-gray-400 hover:text-red-500'
-              }`}
-            aria-label={isInWishlist(product.id) ? 'Remove from wishlist' : 'Add to wishlist'}
+            className={`absolute top-2 right-2 p-2 rounded-full transition-colors ${
+              isInWishlist(product.id)
+                ? "bg-red-500 text-white hover:bg-red-600"
+                : "bg-white text-gray-400 hover:text-red-500"
+            }`}
+            aria-label={
+              isInWishlist(product.id)
+                ? "Remove from wishlist"
+                : "Add to wishlist"
+            }
           >
-            <Heart className={`w-4 h-4 ${isInWishlist(product.id) ? 'fill-current' : ''}`} />
+            <Heart
+              className={`w-4 h-4 ${
+                isInWishlist(product.id) ? "fill-current" : ""
+              }`}
+            />
           </button>
         </div>
 
@@ -192,9 +197,13 @@ const FoodProductCard: React.FC<FoodProductCardProps> = ({
 
           {product.nutritionFacts && (
             <div className="mb-2 text-xs text-gray-600">
-              <span className="font-semibold">{product.nutritionFacts.calories} cal</span>
+              <span className="font-semibold">
+                {product.nutritionFacts.calories} cal
+              </span>
               {product.nutritionFacts.protein && (
-                <span className="ml-2">{product.nutritionFacts.protein} protein</span>
+                <span className="ml-2">
+                  {product.nutritionFacts.protein} protein
+                </span>
               )}
             </div>
           )}
@@ -204,14 +213,17 @@ const FoodProductCard: React.FC<FoodProductCardProps> = ({
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className={`w-4 h-4 ${i < Math.floor(product.rating)
-                    ? 'text-yellow-400 fill-current'
-                    : 'text-gray-300'
-                    }`}
+                  className={`w-4 h-4 ${
+                    i < Math.floor(product.rating)
+                      ? "text-yellow-400 fill-current"
+                      : "text-gray-300"
+                  }`}
                 />
               ))}
             </div>
-            <span className="text-sm text-gray-500 ml-2">({product.reviews})</span>
+            <span className="text-sm text-gray-500 ml-2">
+              ({product.reviews})
+            </span>
           </div>
 
           <div className="mt-auto">
@@ -222,7 +234,7 @@ const FoodProductCard: React.FC<FoodProductCardProps> = ({
                 </span>
                 {product.originalPrice && (
                   <span className="text-sm text-gray-500 line-through">
-                    ${product.originalPrice.toFixed(2)}
+                    ₹{product.originalPrice.toFixed(2)}
                   </span>
                 )}
               </div>
@@ -232,14 +244,15 @@ const FoodProductCard: React.FC<FoodProductCardProps> = ({
             <button
               onClick={handleAddToCart}
               disabled={!product.inStock}
-              className={`w-full py-2 px-4 rounded-lg flex items-center justify-center space-x-2 transition-colors ${product.inStock
-                ? 'bg-[#0071ce] text-white hover:bg-blue-700'
-                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                }`}
-              aria-label={product.inStock ? 'Add to cart' : 'Out of stock'}
+              className={`w-full py-2 px-4 rounded-lg flex items-center justify-center space-x-2 transition-colors ${
+                product.inStock
+                  ? "bg-[#0071ce] text-white hover:bg-blue-700"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }`}
+              aria-label={product.inStock ? "Add to cart" : "Out of stock"}
             >
               <ShoppingCart className="w-4 h-4" />
-              <span>{product.inStock ? 'Add to Cart' : 'Out of Stock'}</span>
+              <span>{product.inStock ? "Add to Cart" : "Out of Stock"}</span>
             </button>
           </div>
         </div>
