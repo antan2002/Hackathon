@@ -1,4 +1,3 @@
-import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   Trash2,
@@ -8,139 +7,23 @@ import {
   Sparkles,
   ShoppingCart,
 } from "lucide-react";
-import { useCart } from "../context/CartContext";
+import React from "react";
 import { CartItem, Recommendation, CartItemRequest } from "../types/cart";
-
+import { useCart } from "../context/CartContext";
+// ...existing code...
 const Cart: React.FC = () => {
-  const { state, updateQuantity, removeFromCart, addToCart } = useCart();
-  const [recommendations, setRecommendations] = useState<
-    Record<string, Recommendation[]>
-  >({});
-  const [loading, setLoading] = useState<Record<string, boolean>>({});
-  const [error, setError] = useState<string | null>(null);
-  const [fetchedItems, setFetchedItems] = useState<Set<string>>(new Set());
-  const [recommendationSources, setRecommendationSources] = useState<
-    Set<string>
-  >(new Set());
-  const toCartItemRequest = (item: CartItem): CartItemRequest => {
-    if (!item.id || !item.category) {
-      throw new Error(`Missing required fields for product ${item.id}`);
-    }
-    return {
-      id: item.id,
-      name: item.title || `Product ${item.id}`,
-      category: item.category,
-      ingredients: Array.isArray(item.ingredients) ? item.ingredients : [],
-    };
-  };
+  const {
+    state,
+    updateQuantity,
+    removeFromCart,
+    addToCart,
+    recommendations,
+    recLoading,
+    recError,
+    fetchRecommendations,
+  } = useCart();
 
-  const fetchRecommendations = useCallback(
-    async (product: CartItem) => {
-      const productId = product.id;
-      if (fetchedItems.has(productId) || loading[productId]) return;
-
-      setLoading((prev) => ({ ...prev, [productId]: true }));
-      setError(null);
-
-      try {
-        console.log(
-          "[fetchRecommendations] Fetching recommendations for product:",
-          product
-        );
-        const response = await fetch(
-          "http://localhost:5000/api/cart/recommendations",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-            body: JSON.stringify({
-              cartItems: [toCartItemRequest(product)],
-            }),
-          }
-        );
-
-        console.log("[fetchRecommendations] Response status:", response.status);
-        if (!response.ok) {
-          const errorData = await response.json();
-          console.error("[fetchRecommendations] Error response:", errorData);
-          throw new Error(errorData.error || "Failed to fetch recommendations");
-        }
-
-        const data = await response.json();
-        console.log("[fetchRecommendations] Response data:", data);
-        const recData = data.recommendations || data; // Handle both nested and direct response
-
-        const recs = recData.recommendations || [];
-        const explanations = recData.explanation || [];
-        const metrics = recData.metrics || [];
-
-        const enrichedRecs: Recommendation[] = recs.map((rec: any) => {
-          const explanationObj = explanations.find((e: any) => e.id === rec.id);
-          const metricObj = metrics.find((m: any) => m.id === rec.id);
-
-          return {
-            id: rec.id,
-            name: rec.name,
-            price: rec.price,
-            category: rec.category,
-            ingredients: rec.ingredients,
-            image: rec.imageUrl || "/placeholder-product.jpg",
-            reasoning:
-              explanationObj?.reasoning ||
-              "Recommended based on your preferences",
-            healthIndex: metricObj?.healthIndex || 0,
-            valueScore: metricObj?.valueScore || 0,
-            variant: rec.variant || "",
-          };
-        });
-
-        console.log(
-          "[fetchRecommendations] Enriched recommendations:",
-          enrichedRecs
-        );
-        setRecommendations((prev) => ({
-          ...prev,
-          [productId]: enrichedRecs.slice(0, 3),
-        }));
-        setFetchedItems((prev) => new Set(prev).add(productId));
-      } catch (err) {
-        console.error("[fetchRecommendations] Caught error:", err);
-        setError(
-          err instanceof Error
-            ? err.message
-            : "Recommendation service unavailable"
-        );
-      } finally {
-        setLoading((prev) => ({ ...prev, [productId]: false }));
-      }
-    },
-    [fetchedItems, loading]
-  );
-
-  useEffect(() => {
-    const newItems = state.items.filter(
-      (item) =>
-        !fetchedItems.has(item.id) &&
-        !loading[item.id] &&
-        !recommendationSources.has(item.id)
-    );
-
-    if (newItems.length > 0) {
-      const processItem = async (item: CartItem) => {
-        await fetchRecommendations(item);
-      };
-
-      // Process items sequentially instead of using setTimeout
-      newItems.reduce(
-        (promise, item) => promise.then(() => processItem(item)),
-        Promise.resolve()
-      );
-    }
-  }, [state.items, fetchedItems, recommendationSources, fetchRecommendations]);
-
-  // Rest of the component remains the same...
+  // ...existing code...
   const handleIncreaseQuantity = (id: string) => {
     const item = state.items.find((item) => item.id === id);
     if (item) {
@@ -159,16 +42,6 @@ const Cart: React.FC = () => {
 
   const handleRemoveItem = (id: string) => {
     removeFromCart(id);
-    setFetchedItems((prev) => {
-      const newSet = new Set(prev);
-      newSet.delete(id);
-      return newSet;
-    });
-    setRecommendations((prev) => {
-      const newRecs = { ...prev };
-      delete newRecs[id];
-      return newRecs;
-    });
   };
 
   const handleAddRecommendation = (product: Recommendation) => {
@@ -185,11 +58,10 @@ const Cart: React.FC = () => {
       inStock: false,
     };
     addToCart(cartItem);
-    setRecommendationSources((prev) => new Set(prev).add(product.id));
   };
 
   const subtotal = state.items.reduce(
-    (sum, item) => sum + item.price * item.quantity,
+    (sum: number, item: CartItem) => sum + item.price * item.quantity,
     0
   );
   const shipping = subtotal > 350 ? 0 : 5.99;
@@ -225,7 +97,7 @@ const Cart: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2 space-y-6">
-            {state.items.map((item) => (
+            {state.items.map((item: CartItem) => (
               <div
                 key={`${item.id}-${item.variant || "default"}`}
                 className="bg-white rounded-2xl shadow-md p-6 transition-all hover:shadow-lg"
@@ -286,140 +158,140 @@ const Cart: React.FC = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Enhanced AI Recommendation Section */}
-                <div className="mt-8 pt-8 border-t border-gray-100">
-                  <div className="flex items-center mb-5">
-                    <div className="bg-gradient-to-tr from-purple-500 to-indigo-500 p-2 rounded-full shadow-md mr-3">
-                      <Sparkles className="w-5 h-5 text-white" />
-                    </div>
-                    <h4 className="text-xl font-semibold text-gray-800">
-                      AI-Powered Product Recommendations
-                    </h4>
-                  </div>
-
-                  {error && (
-                    <div className="bg-red-50 border border-red-300 p-4 rounded-lg mb-5">
-                      <div className="flex items-center text-red-700 text-sm">
-                        <svg
-                          className="w-5 h-5 mr-2"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        {error}
-                      </div>
-                      <button
-                        onClick={() => fetchRecommendations(item)}
-                        className="mt-2 text-sm text-purple-600 hover:text-purple-800 font-medium flex items-center"
-                      >
-                        <svg
-                          className="w-4 h-4 mr-1"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                          />
-                        </svg>
-                        Try Again
-                      </button>
-                    </div>
-                  )}
-
-                  {loading[item.id] ? (
-                    <div className="flex justify-center py-6">
-                      <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-purple-500"></div>
-                    </div>
-                  ) : recommendations[item.id]?.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      {recommendations[item.id].map((rec) => (
-                        <div
-                          key={rec.id}
-                          className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-all duration-200"
-                        >
-                          <div className="relative h-32 mb-4 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center">
-                            <img
-                              src={rec.image}
-                              alt={rec.name}
-                              className="w-full h-full object-contain"
-                            />
-                          </div>
-
-                          <h5 className="text-base font-semibold text-gray-800 mb-1">
-                            {rec.name}
-                          </h5>
-                          {rec.variant && (
-                            <p className="text-gray-500 text-xs mb-1">
-                              Variant: {rec.variant}
-                            </p>
-                          )}
-
-                          <p className="text-gray-900 font-medium mb-1">
-                            ₹{rec.price.toFixed(2)}
-                          </p>
-
-                          {rec.reasoning && (
-                            <div className="bg-green-50 border-l-4 border-green-400 p-3 rounded-md mb-3 text-xs italic text-green-700">
-                              {rec.reasoning}
-                            </div>
-                          )}
-
-                          <div className="flex justify-start gap-2 mb-3 text-xs font-medium">
-                            {rec.healthIndex !== undefined && (
-                              <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
-                                Health: {rec.healthIndex}/20
-                              </span>
-                            )}
-                            {rec.valueScore !== undefined && (
-                              <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full">
-                                Value: {rec.valueScore.toFixed(2)}
-                              </span>
-                            )}
-                          </div>
-
-                          <button
-                            onClick={() => handleAddRecommendation(rec)}
-                            className="w-full bg-gradient-to-r from-[#0071ce] to-[#005bb5] hover:from-[#005bb5] hover:to-[#004799] text-white text-sm font-semibold py-2 rounded-md flex items-center justify-center transition"
-                          >
-                            <ShoppingCart className="w-4 h-4 mr-2" />
-                            Add to Cart
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
-                      <svg
-                        className="w-8 h-8 mx-auto text-gray-400 mb-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                      <p className="text-gray-500 text-sm">
-                        No recommendations available
-                      </p>
-                    </div>
-                  )}
-                </div>
               </div>
             ))}
+
+            {/* AI Recommendation Section for the whole cart - moved to bottom */}
+            <div className="mt-8 pt-8 border-t border-gray-100">
+              <div className="flex items-center mb-5">
+                <div className="bg-gradient-to-tr from-purple-500 to-indigo-500 p-2 rounded-full shadow-md mr-3">
+                  <Sparkles className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-800">
+                  AI-Powered Product Recommendations
+                </h4>
+              </div>
+
+              {recError && (
+                <div className="bg-red-50 border border-red-300 p-4 rounded-lg mb-5">
+                  <div className="flex items-center text-red-700 text-sm">
+                    <svg
+                      className="w-5 h-5 mr-2"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {recError}
+                  </div>
+                  <button
+                    onClick={fetchRecommendations}
+                    className="mt-2 text-sm text-purple-600 hover:text-purple-800 font-medium flex items-center"
+                  >
+                    <svg
+                      className="w-4 h-4 mr-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                      />
+                    </svg>
+                    Try Again
+                  </button>
+                </div>
+              )}
+
+              {recLoading ? (
+                <div className="flex justify-center py-6">
+                  <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-purple-500"></div>
+                </div>
+              ) : recommendations.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {recommendations.map((rec) => (
+                    <div
+                      key={rec.id}
+                      className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-all duration-200"
+                    >
+                      <div className="relative h-32 mb-4 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center">
+                        <img
+                          src={rec.image}
+                          alt={rec.name}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+
+                      <h5 className="text-base font-semibold text-gray-800 mb-1">
+                        {rec.name}
+                      </h5>
+                      {rec.variant && (
+                        <p className="text-gray-500 text-xs mb-1">
+                          Variant: {rec.variant}
+                        </p>
+                      )}
+
+                      <p className="text-gray-900 font-medium mb-1">
+                        ₹{rec.price.toFixed(2)}
+                      </p>
+
+                      {rec.reasoning && (
+                        <div className="bg-green-50 border-l-4 border-green-400 p-3 rounded-md mb-3 text-xs italic text-green-700">
+                          {rec.reasoning}
+                        </div>
+                      )}
+
+                      <div className="flex justify-start gap-2 mb-3 text-xs font-medium">
+                        {rec.healthIndex !== undefined && (
+                          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                            Health: {rec.healthIndex}/20
+                          </span>
+                        )}
+                        {rec.valueScore !== undefined && (
+                          <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full">
+                            Value: {rec.valueScore.toFixed(2)}
+                          </span>
+                        )}
+                      </div>
+
+                      <button
+                        onClick={() => handleAddRecommendation(rec)}
+                        className="w-full bg-gradient-to-r from-[#0071ce] to-[#005bb5] hover:from-[#005bb5] hover:to-[#004799] text-white text-sm font-semibold py-2 rounded-md flex items-center justify-center transition"
+                      >
+                        <ShoppingCart className="w-4 h-4 mr-2" />
+                        Add to Cart
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+                  <svg
+                    className="w-8 h-8 mx-auto text-gray-400 mb-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <p className="text-gray-500 text-sm">
+                    No recommendations available
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Sidebar Summary */}
