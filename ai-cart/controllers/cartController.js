@@ -59,7 +59,7 @@ async function getCartRecommendations(userId, cartItems) {
     console.log(
       "[getCartRecommendations] Calling recommendationService.getCartBasedRecommendations"
     );
-    const { recommendations, explanation, metrics, error } =
+    const { recommendations, metrics, error } =
       await recommendationService.getCartBasedRecommendations(
         userId,
         cartItems
@@ -83,7 +83,6 @@ async function getCartRecommendations(userId, cartItems) {
     return {
       success: true,
       recommendations,
-      explanation,
       metrics,
       timestamp: new Date(),
     };

@@ -9,28 +9,22 @@ console.log("Recommendation service loaded");
 
 async function getCategorySpecificRecommendations(userId, cartItems = []) {
   try {
-    console.log(
-      "[Step 1] Starting new LLM-driven recommendation for user:",
-      userId
-    );
+    console.log("[Recommendation] Service started for user:", userId);
     const user = await User.findById(userId)
       .select("healthConditions averageOrderValue previousOrders")
       .lean();
-    console.log("[Step 2] User fetched:", user);
+    console.log("[Recommendation] User fetched:", user ? user._id : null);
     if (!user) throw new Error("User not found");
 
     // Get only products from categories present in cart items
     const cartCategorySet = new Set(
       cartItems.map((item) => item.category).filter(Boolean)
     );
-    console.log("Cart categories:", Array.from(cartCategorySet));
+    // Cart categories determined
     const allProducts = await Product.find({
       category: { $in: Array.from(cartCategorySet) },
     }).lean();
-    console.log(
-      "Products fetched for cart categories. Count:",
-      allProducts.length
-    );
+    // Products fetched for cart categories
     if (!allProducts.length)
       throw new Error("No products found for cart categories");
 
@@ -44,27 +38,29 @@ async function getCategorySpecificRecommendations(userId, cartItems = []) {
         )
       )
     );
-    console.log(
-      "Unique ingredients list created. Count:",
-      allIngredients.length
-    );
+    // Unique ingredients list created
 
     // Use LLM to find 5-10 key ingredients to avoid for user's health
     const avoidPrompt = prompts.avoidIngredientsPrompt(
       user.healthConditions,
       allIngredients
     );
-    console.log("Avoid ingredients prompt:", avoidPrompt);
+    // Avoid ingredients prompt created
+    console.log("[Recommendation] Avoid ingredients prompt:", avoidPrompt);
     const avoidModel = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const avoidResult = await avoidModel.generateContent(avoidPrompt);
     const avoidText = (await avoidResult.response).text().trim();
-    console.log("LLM avoid ingredients response:", avoidText);
+    console.log("[Recommendation] LLM avoid ingredients response:", avoidText);
     let avoidIngredients = [];
     try {
       avoidIngredients = JSON.parse(
         avoidText.match(/\[.*\]/s)?.[0] || "[]"
       ).map((i) => i.toLowerCase());
-      console.log("Parsed avoid ingredients:", avoidIngredients);
+      // Parsed avoid ingredients
+      console.log(
+        "[Recommendation] Parsed avoid ingredients:",
+        avoidIngredients
+      );
     } catch (e) {
       logger.error("Failed to parse avoidIngredients LLM response", avoidText);
     }
@@ -76,14 +72,11 @@ async function getCategorySpecificRecommendations(userId, cartItems = []) {
       (p) =>
         !p.ingredients?.some((i) => avoidIngredients.includes(i.toLowerCase()))
     );
-    console.log("Products after avoid filter. Count:", productsNoAvoid.length);
+    // Products after avoid filter
 
     // SKIP nutrition filter step, use productsNoAvoid directly
     const productsForRecommendation = productsNoAvoid;
-    console.log(
-      "Using products after avoid filter. Count:",
-      productsForRecommendation.length
-    );
+    // Using products after avoid filter
 
     // LLM call: Final recommendation based on user, previous orders, cart, and filtered products
     const prevOrders = user.previousOrders || [];
@@ -93,20 +86,24 @@ async function getCategorySpecificRecommendations(userId, cartItems = []) {
       cartItems,
       productsForRecommendation
     );
-    console.log("Recommendation prompt:", recPrompt);
+    console.log("[Recommendation] Recommendation prompt:", recPrompt);
     const recModel = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const recResult = await recModel.generateContent(recPrompt);
     const recText = (await recResult.response).text().trim();
-    console.log("LLM recommendation response:", recText);
+    console.log("[Recommendation] LLM recommendation response:", recText);
     let recommendations = [];
-    let explanation = [];
     try {
       const parsed = JSON.parse(recText.match(/\[.*\]/s)?.[0] || "[]");
       recommendations = parsed.map((r) =>
-        typeof r === "string" ? { id: r } : r
+        typeof r === "string"
+          ? { id: r, explanation: "" }
+          : { ...r, explanation: r.reasoning || r.explanation || "" }
       );
-      explanation = recommendations.map((r) => r.reasoning || "");
-      console.log("Parsed recommendations:", JSON.stringify(recommendations, null, 2));
+      // Parsed recommendations
+      console.log(
+        "[Recommendation] Parsed recommendations:",
+        JSON.stringify(recommendations, null, 2)
+      );
     } catch (e) {
       logger.error("Failed to parse recommendations LLM response", recText);
     }
@@ -115,38 +112,38 @@ async function getCategorySpecificRecommendations(userId, cartItems = []) {
 
     // Fetch recommended product details
     const recommendedIds = recommendations.map((r) => r.id || r.productId);
-    console.log("Looking for these product IDs:", recommendedIds);
-    console.log("Available products:", productsForRecommendation.map(p => ({ id: p.id, name: p.name })));
+    // Looking for recommended product IDs
+    console.log("[Recommendation] Recommended product IDs:", recommendedIds);
 
     // Debug logging for ID matching
-    productsForRecommendation.forEach(p => {
-      console.log(`Checking product ${p.id} (${typeof p.id}):`,
-        recommendedIds.includes(p.id),
-        "Matches any?:", recommendedIds.some(rid => rid === p.id)
-      );
-    });
+    // Product ID matching debug skipped
 
-    const recommendedProducts = productsForRecommendation.filter((p) =>
-      recommendedIds.includes(p.id)
-    );
+    // Attach explanation to each recommended product if available
+    const recommendedProducts = productsForRecommendation
+      .filter((p) => recommendedIds.includes(p.id))
+      .map((p) => {
+        const rec = recommendations.find((r) => (r.id || r.productId) === p.id);
+        return rec ? { ...p, explanation: rec.explanation || "" } : p;
+      });
+    // Recommended products fetched
     console.log(
-      "Recommended products fetched. Count:",
-      recommendedProducts.length,
-      "\nMatched products:",
-      JSON.stringify(recommendedProducts.map(p => ({ id: p.id, name: p.name })), null, 2)
+      "[Recommendation] Recommended products:",
+      recommendedProducts.map((p) => ({
+        id: p.id,
+        name: p.name,
+        explanation: p.explanation,
+      }))
     );
 
     // Generate nutrition metrics for recommended products
     const metrics = generateNutritionMetrics(recommendedProducts);
-    console.log("Nutrition metrics generated:", metrics);
+    // Nutrition metrics generated
+    console.log("[Recommendation] Nutrition metrics:", metrics);
 
     return {
       recommendations: recommendedProducts,
       metrics,
-      explanation,
       avoidIngredients,
-      // nutritionRanges is not used anymore, but kept for compatibility
-      nutritionRanges: undefined,
     };
   } catch (error) {
     logger.error("LLM Recommendation failed:", error.message);

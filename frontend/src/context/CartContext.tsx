@@ -183,10 +183,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       console.log("[CartContext] Recommendation response:", data);
       const recData = data.recommendations || data;
       const recs = recData.recommendations || [];
-      const explanations = recData.explanation || [];
       const metrics = recData.metrics || [];
       const enrichedRecs = recs.map((rec: any) => {
-        const explanationObj = explanations.find((e: any) => e.id === rec.id);
         const metricObj = metrics.find((m: any) => m.id === rec.id);
         return {
           id: rec.id,
@@ -195,9 +193,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           category: rec.category,
           ingredients: rec.ingredients,
           image: rec.imageUrl || "/placeholder-product.jpg",
-          reasoning:
-            explanationObj?.reasoning ||
-            "Recommended based on your preferences",
+          reasoning: rec.explanation || "Recommended based on your preferences",
           healthIndex: metricObj?.healthIndex || 0,
           valueScore: metricObj?.valueScore || 0,
           variant: rec.variant || "",
